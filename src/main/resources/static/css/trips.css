@@ -1,0 +1,109 @@
+/* Route's card */
+.row {
+	margin-top: 80px;
+}
+
+.card {
+	margin-bottom: 50px;
+	background-image: url("../imgs/crossword.png");
+	overflow: hidden;
+}
+
+.card-title {
+	width: 100%;
+	height: 40%;
+	text-shadow: 2px 2px 10px black;
+	background-color: rgba(0,0,0,.5);
+}
+
+.card-content {
+	height: 150px;
+}
+
+.card-title b {
+	color: #E1B709;
+}
+
+.card-image {
+	height: 150px;
+}
+
+.card-image img {
+	height: 150px;
+}
+
+.card-action button {
+	margin-left: 5px;
+	width: 80px;
+	padding: 5px;
+}
+
+.card-action button:hover {
+	transform: scale(1.05);
+	color: black;
+}
+
+/* Orders Baget */
+#purchase {
+	height: 20px;
+	padding-top: 10px;
+	position: absolute;
+	top: 4px;
+	left: 40px;
+	color: white;
+	font-size: 1rem;
+	background-color: rgba(250, 10, 10, 0.7);
+	border-radius: 5px;
+	z-index: -1;
+}
+
+/* Buy Now Modal */
+#buy-now {
+	max-height: 100%;
+	max-width: 800px;
+	height: 90%;
+	width: 90%;
+	bottom: 10%;
+	border-radius: 5px;
+	background-image: url("../imgs/crossword.png");
+}
+
+#buy-now .responsive-image {
+	width: 100%;
+}
+
+#buy-now #title {
+	width: 100%;
+	padding: 5px 20px;
+	color: white;
+	font-size: 2rem;
+	position: relative;
+	top: -60px;
+	background-color: rgba(0,0,0,0.8);
+}
+
+#buy-now #title b {
+	color: #E1B709;
+}
+
+#buy-now #description {
+	padding: 5px 20px;
+	text-align: justify;
+	background-color: rgba(0,0,0,0.15);
+	border-radius: 5px;
+}
+
+#buy-now .modal-footer {
+	width: 90%;
+	margin-left: 5%;
+}
+
+#buy-now input[type=submit] {
+	margin-bottom: 20px;
+	
+}
+
+#user-details .collapsible-body {
+	width: 90%;
+	margin-left: 5%;
+}

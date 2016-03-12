@@ -1,0 +1,114 @@
+<!-- Header -->
+<header>
+  <div class="slider">
+      <ul class="slides">
+        <li>
+          <img src="imgs/slider/nature1.jpg" />
+          <div class="caption center-align">
+            <h3>This is our big Tagline!</h3>
+            <h5>Here's our small slogan.</h5>
+          </div>
+        </li>
+        <li>
+          <img src="imgs/slider/nature5.jpg" />
+          <div class="caption left-align">
+            <h3>Left Aligned Caption</h3>
+            <h5>Here's our small slogan.</h5>
+          </div>
+        </li>
+        <li>
+          <img src="imgs/slider/nature3.jpg" />
+          <div class="caption right-align">
+            <h3>Right Aligned Caption</h3>
+            <h5>Here's our small slogan.</h5>
+          </div>
+        </li>
+        <li>
+          <img src="imgs/slider/nature4.jpg" />
+          <div class="caption center-align">
+            <h3>This is our big Tagline!</h3>
+            <h5>Here's our small slogan.</h5>
+          </div>
+        </li>
+      </ul>
+  </div>
+</header>
+
+<!-- Navigation -->
+<nav class="green darken-2 hoverable">
+  <ul class="right">
+    <li class="waves-effect" th:unless="${page} == 'home'">
+      <a href="/">
+        <span class="material-icons">home</span>
+        <span class="hide-on-small-only">Home</span>
+      </a>
+    </li>
+    <li class="waves-effect" th:unless="${page} == 'trips'">
+      <a href="trips">
+        <span class="material-icons">list</span>
+        <span class="hide-on-small-only">Trips</span>
+      </a>
+    </li>
+    <li class="waves-effect" th:unless="${page} == 'orders'">
+      <a href="orders">
+        <span class="material-icons">shopping_cart</span>
+        <span class="hide-on-small-only">Orders</span>
+<!--         <span id="purchase" class="badge" th:if="properties.page.equals('orders')"
+          ng-show="showPurchases()">{{purchases}}</span> -->
+      </a>
+    </li>
+    <li class="waves-effect">
+      <a class="modal-trigger" href="#login">
+        <span class="material-icons">perm_identity</span>
+        <span class="hide-on-small-only">Log In</span>
+      </a>
+    </li>
+    <li class="waves-effect">
+      <a class="modal-trigger" href="#signup">
+        <span class="material-icons">input</span>
+        <span class="hide-on-small-only">Sign Up</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<!-- Login Modal -->
+<div id="login" class="modal">
+  <div class="modal-content">
+    <h4>Login</h4>
+  </div>
+  <div class="modal-footer">
+    <form action="" method="POST">
+      <input class="input-data" type="email" name="email" placeholder="Your email" required="required" />
+      <input class="input-data" type="password" name="password" placeholder="Your password" required="required" />
+      <div class="btn-box">
+        <input class="btn green darken-2 waves-effect" type="submit" />
+        <button class="btn green darken-2 waves-effect">
+          Reset
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Signup Modal -->
+<div id="signup" class="modal">
+  <div class="modal-content">
+    <h4>Sign Up</h4>
+  </div>
+  <div class="modal-footer">
+    <form action="" method="POST">
+      <input class="input-data" type="email" name="email" placeholder="Your email" required="required" />
+      <input class="input-data" type="password" name="password" placeholder="Your password" required="required" />
+      <div class="btn-box">
+        <input class="btn green darken-2 waves-effect" type="submit" />
+        <button class="btn green darken-2 waves-effect">Reset</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Page footer -->
+<footer class="page-footer green darken-2">
+  &copy; Copyrights 2016 All rights reserved Made By SAKA7
+</footer>

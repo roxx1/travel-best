@@ -1,0 +1,187 @@
+html, body {
+	background-color: #DAE9DF;
+	background-image: url("../imgs/green_cup.png");
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+header {
+	height: 400px;
+	width: 100%;
+}
+
+.slider h3 {
+	background-color: rgba(255,255,255,.5);
+	border-radius: 20px;
+	box-shadow: 0 0 10px 1px white;
+	color: #171717;
+	padding: 5px;
+	text-shadow: 2px 2px 2px white;
+}
+
+.slider h5 {
+	color: #F2F2F2;
+	font-weight: bold;
+	text-shadow: 0 0 5px black;
+} 
+
+nav > ul li {
+	height: 100%;
+	text-align: center;
+	width: 115px;
+}
+
+nav > ul li>a {
+	width: 115px;
+}
+nav > ul a:hover {
+	background-color: rgba(255,255,255, 0.3);
+	border-bottom: 5px solid green;
+	color: black;
+	cursor: pointer;
+	font-weight: bold;
+	transition: all 0.3s ease-in-out;
+}
+
+/* Modal Styles */
+#login, #signup {
+	background-color: rgba(255,255,255,.9);
+	background-image: url("../imgs/crossword.png");
+	border-radius: 15px;
+	box-shadow: 0 0 10px 5px rgba(255,255,255,0.4);
+	height: 320px;
+	max-width: 600px;
+	padding: 20px;
+	width: 70%;
+}
+
+#login .modal-footer, #signup .modal-footer {
+	background: transparent;
+}
+
+#login h4, #signup h4 {
+	color: black;
+	text-align: center;
+}
+
+.input-data {
+	color: black;
+}
+
+.input-data::-webkit-input-placeholder {
+	color: #575757;
+}
+
+.input-data:valid {
+	border-bottom: 2px solid green;
+	box-shadow: none;
+}
+
+.input-data:invalid {
+	border-bottom: 2px solid red;
+	box-shadow: none;
+}
+
+.btn-box {
+	left: 50%;
+	margin-left: -150px;
+	position: absolute; 
+	width: 300px;
+}
+
+#login .btn, #signup .btn {
+	margin-right: 20px;
+	width: 120px;
+}
+
+#login .btn:hover, #signup .btn:hover {
+	background-color: #00AD1A !important;
+}
+
+/*Logo Styles*/
+.logo {
+	margin: 30px auto;
+}
+
+.logo h1 {
+	margin: 0;
+	text-align: center;
+}
+
+.logo p {
+	margin: 0;
+	text-align: center;
+	font-size: 1.2rem; 
+}
+
+.logo img {
+	position: relative;
+	left: 50%;
+	margin-left: -200px;
+}
+
+/* Content Styles */
+article {
+	background-image: url("../imgs/crossword.png");
+	border-radius: 5px;
+	box-shadow: 0 0 5px 3px grey;
+	margin: 10px;
+	padding: 20px 50px;
+}
+
+article h1 {
+	text-align: center;
+	text-shadow: 2px 2px 2px grey;
+}
+
+article p {
+	margin: 20px;
+	text-align: justify;
+}
+
+article img {
+	width: 100%;
+	border-radius: 10px;
+}
+
+/* Footer Styles */
+footer {
+	color: white;
+	padding-bottom: 20px;
+	text-align: center;
+	width: 100%;
+}
+
+/* Static Navigation Bar */
+.static-nav {
+	position: fixed;
+	top: 0;
+	z-index: 5;
+}
+
+@media all and (max-width: 600px) {
+	nav > ul li {
+		width: 80px;
+	}
+
+	nav > ul li>a {
+		height: 60px;
+		padding: 5px;
+		width: 80px;
+	}
+
+	.logo img {
+		width: 250px;
+		margin-left: -125px;
+	}
+
+	article h1 {
+		font-size: 2rem;
+	}
+
+	article p {
+		margin: 5px;
+	}
+}

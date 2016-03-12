@@ -1,0 +1,15 @@
+article h3 {
+	text-align: center;
+}
+
+article p {
+	text-align: center;
+}
+
+article img {
+	width: 300px;
+	height: 300px;
+	position: relative;
+	left: 50%;
+	margin-left: -150px;
+}

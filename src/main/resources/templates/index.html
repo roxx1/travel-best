@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Travel Best - home</title>
+  <link rel="shortcut icon" type="image/png" href="imgs/logo/travelbest.png"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="css/vendor/materialize.css" />
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
+</head>
+
+<body>
+  <header th:replace="layout/components :: header"></header>
+  <nav th:replace="layout/components :: nav"></nav>
+  <div th:replace="layout/components :: #login"></div>
+  <div th:replace="layout/components :: #signup"></div>
+
+  <div class="container">
+    <div class="logo">
+      <img src="imgs/logo/travelbest.svg" alt="No Image" />
+      <h1>Travel best</h1>
+      <p>The best traveling company in the world</p>
+    </div>
+
+    <article class="hoverable">
+      <h1>Best Vacations</h1>
+      <hr />
+      <img src="imgs/routes/cuba.jpg" alt="" />
+      <hr/>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione assumenda sunt impedit alias. Consectetur incidunt, sunt repellat. Maxime dolores ut, atque molestias repudiandae ipsa architecto blanditiis dolorem eum! Sint voluptates unde, debitis maxime praesentium aperiam illo asperiores dolores hic animi blanditiis quam, corrupti culpa, aut odit vero quod reiciendis cumque id ab nobis optio odio est? Consequatur consequuntur ad asperiores?</p>
+      <hr />
+    </article>
+    <article class="hoverable">
+      <h1>Lowest Prices</h1>
+      <hr />
+      <img src="imgs/cost-reduction.jpg" alt="" />
+      <hr />
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione assumenda sunt impedit alias. Consectetur incidunt, sunt repellat. Maxime dolores ut, atque molestias repudiandae ipsa architecto blanditiis dolorem eum! Sint voluptates unde, debitis maxime praesentium aperiam illo asperiores dolores hic animi blanditiis quam, corrupti culpa, aut odit vero quod reiciendis cumque id ab nobis optio odio est? Consequatur consequuntur ad asperiores?</p>
+      <hr />
+    </article>
+    <article class="hoverable">
+      <h1>Satisfaction guaranteed</h1>
+      <hr />
+      <img src="imgs/satisfaction-guaranteed.jpg" alt="" />
+      <hr />
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione assumenda sunt impedit alias. Consectetur incidunt, sunt repellat. Maxime dolores ut, atque molestias repudiandae ipsa architecto blanditiis dolorem eum! Sint voluptates unde, debitis maxime praesentium aperiam illo asperiores dolores hic animi blanditiis quam, corrupti culpa, aut odit vero quod reiciendis cumque id ab nobis optio odio est? Consequatur consequuntur ad asperiores?</p>
+      <hr />
+    </article>
+  </div>
+
+  <footer th:replace="layout/components :: footer"></footer>
+
+  <script src="js/vendor/jquery.js"></script>
+  <script src="js/vendor/jquery.nicescroll.js"></script>
+  <script src="js/vendor/materialize.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
