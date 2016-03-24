@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class IndexController {
-
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String index(Model model) {
-		model.addAttribute("page", "home");
-		return "index";
+public class LoginController {
+	
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public String login(Model model) {
+		// TODO authorization should be implemented here
+		return new IndexController().index(model);
 	}
-
+	
 }

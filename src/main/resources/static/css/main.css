@@ -34,12 +34,13 @@ nav > ul li {
 }
 
 nav > ul li>a {
+	color: #111;
 	width: 115px;
 }
 nav > ul a:hover {
-	background-color: rgba(255,255,255, 0.3);
+	background-color: rgba(0,0,0, 0.2);
 	border-bottom: 5px solid green;
-	color: black;
+	color: #fafafa;
 	cursor: pointer;
 	font-weight: bold;
 	transition: all 0.3s ease-in-out;

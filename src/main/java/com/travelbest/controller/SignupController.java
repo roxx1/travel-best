@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class IndexController {
+public class SignupController {
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String index(Model model) {
-		model.addAttribute("page", "home");
-		return "index";
+	@RequestMapping(value = "/signup", method = RequestMethod.POST)
+	public String signup(Model model) {
+		// TODO registration should be implemented here
+		return new IndexController().index(model);
 	}
-
+	
 }

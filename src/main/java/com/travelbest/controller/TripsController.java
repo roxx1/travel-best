@@ -19,6 +19,5 @@ public class TripsController {
 		model.addAttribute("page", "trips");
 		return "trips";
 	}
-	
 
 }

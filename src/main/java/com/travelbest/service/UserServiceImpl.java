@@ -1,4 +1,4 @@
-package com.travelbest.services;
+package com.travelbest.service;
 
 import java.util.List;
 
@@ -26,27 +26,27 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void addUser(User user) {
+	public void save(User user) {
 		userRepository.save(user);
 	}
 
 	@Override
-	public void deleteUser(long id) {
-		userRepository.deleteUserById(id);
+	public void delete(long id) {
+		userRepository.delete(id);
 	}
 
 	@Override
-	public List<User> listAllUsers() {
+	public List<User> findAll() {
 		return userRepository.findAll();
 	}
 
 	@Override
-	public User findUserById(long id) {
-		return userRepository.findUserById(id);
+	public User findById(long id) {
+		return userRepository.findOne(id);
 	}
 
 	@Override
-	public User findUserByEmail(String email) {
+	public User findByEmail(String email) {
 		return userRepository.findUserByEmail(email);
 	}
 

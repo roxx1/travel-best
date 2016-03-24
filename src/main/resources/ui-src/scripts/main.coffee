@@ -1,5 +1,5 @@
 $(document).ready ->
-	$('.modal-trigger').leanModal();
+	$('.modal-trigger').leanModal()
 
 	# Slider Configuration
 	$('.slider').slider {
