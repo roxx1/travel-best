@@ -5,28 +5,28 @@
         <li>
           <img src="imgs/slider/nature1.jpg" />
           <div class="caption center-align">
-            <h3>This is our big Tagline!</h3>
+            <h3>Sky is the limit!</h3>
             <h5>Here's our small slogan.</h5>
           </div>
         </li>
         <li>
           <img src="imgs/slider/nature5.jpg" />
           <div class="caption left-align">
-            <h3>Left Aligned Caption</h3>
+            <h3>Life is a journey!</h3>
             <h5>Here's our small slogan.</h5>
           </div>
         </li>
         <li>
           <img src="imgs/slider/nature3.jpg" />
           <div class="caption right-align">
-            <h3>Right Aligned Caption</h3>
+            <h3>Dreams comes true</h3>
             <h5>Here's our small slogan.</h5>
           </div>
         </li>
         <li>
           <img src="imgs/slider/nature4.jpg" />
           <div class="caption center-align">
-            <h3>This is our big Tagline!</h3>
+            <h3>Do just what you want to!</h3>
             <h5>Here's our small slogan.</h5>
           </div>
         </li>
@@ -35,7 +35,7 @@
 </header>
 
 <!-- Navigation -->
-<nav class="green darken-2 hoverable">
+<nav class="user-navbar green darken-2 hoverable">
   <ul class="right">
     <li class="waves-effect" th:unless="${page} == 'home'">
       <a href="/">
@@ -53,8 +53,6 @@
       <a href="orders">
         <span class="material-icons">shopping_cart</span>
         <span class="hide-on-small-only">Orders</span>
-<!--         <span id="purchase" class="badge" th:if="properties.page.equals('orders')"
-          ng-show="showPurchases()">{{purchases}}</span> -->
       </a>
     </li>
     <li class="waves-effect">
@@ -67,6 +65,48 @@
       <a class="modal-trigger" href="#signup">
         <span class="material-icons">input</span>
         <span class="hide-on-small-only">Sign Up</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<!-- Admin Navigation Bar -->
+<nav class="admin-navbar green darken-2 hoverable">
+  <ul class="right">
+    <li class="waves-effect" th:unless="${page} == 'edit-finance'">
+      <a href="/edit/finance">
+        <span class="material-icons">trending_up</span>
+        <span class="hide-on-small-only">Finance</span>
+      </a>
+    </li>
+    <li class="waves-effect" th:unless="${page} == 'edit-routes'">
+      <a href="/edit/routes">
+        <span class="material-icons">open_with</span>
+        <span class="hide-on-small-only">Routes</span>
+      </a>
+    </li>
+    <li class="waves-effect" th:unless="${page} == 'edit-trips'">
+      <a href="/edit/trips">
+        <span class="material-icons">list</span>
+        <span class="hide-on-small-only">Trips</span>
+      </a>
+    </li>
+    <li class="waves-effect" th:unless="${page} == 'edit-orders'">
+      <a href="/edit/orders">
+        <span class="material-icons">shopping_cart</span>
+        <span class="hide-on-small-only">Orders</span>
+      </a>
+    </li>
+    <li class="waves-effect" th:unless="${page} == 'edit-guides'">
+      <a href="/edit/guides">
+        <span class="material-icons">supervisor_account</span>
+        <span class="hide-on-small-only">Guides</span>
+      </a>
+    </li>
+    <li class="waves-effect">
+      <a class="modal-trigger" href="#logout">
+        <span class="material-icons">power_settings_new</span>
+        <span class="hide-on-small-only">Log Out</span>
       </a>
     </li>
   </ul>

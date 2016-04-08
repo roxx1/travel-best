@@ -2,6 +2,7 @@ package com.travelbest.service;
 
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ public class UserServiceTest {
 	private UserServiceImpl userService;
 
 	@Test
+	@Ignore
 	public void saveTest() {
 		User jack = new User("Jack", "Jackson", "Bla-bla", "jack.jackson@gmail.com", "123");
 		userService.save(jack);
@@ -29,6 +31,7 @@ public class UserServiceTest {
 	}
 
 	@Test
+	@Ignore
 	public void findByEmailTest() {
 		User jack = new User("Jack", "Jackson", "Bla-bla", "jack.jackson@gmail.com", "123");
 		userService.save(jack);

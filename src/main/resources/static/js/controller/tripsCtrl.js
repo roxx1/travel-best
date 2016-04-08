@@ -39,3 +39,9 @@ app.controller('tripsCtrl', function($scope) {
     return $scope.purchases++;
   };
 });
+
+$('.tooltipped').tooltip({
+  delay: 50
+});
+
+$('select').material_select();

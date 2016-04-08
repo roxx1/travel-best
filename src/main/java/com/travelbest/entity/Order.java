@@ -39,6 +39,19 @@ public class Order {
 	private boolean rejected;
 	private boolean returned;
 
+	public Order() {
+	}
+
+	public Order(Trip trip, User user, PaymentSystem paymentSystem, Date payDate,
+			boolean rejected, boolean returned) {
+		setTrip(trip);
+		setUser(user);
+		setPaymentSystem(paymentSystem);
+		setPayDate(payDate);
+		setRejected(rejected);
+		setRejected(rejected);
+	}
+
 	public long getId() {
 		return id;
 	}
@@ -97,10 +110,9 @@ public class Order {
 
 	public String toString() {
 		return String.format(
-				"id: %d, trip_id: %d, user_id: %d, payment_system_id: %d,"
-						+ "date: %s, rejected: %b, returned: %b",
-				getId(), getTrip().getId(), getUser().getId(), getPaymentSystem().getId(),
-				getPayDate().toString(), isRejected(), isReturned());
+				"id: %d, trip_id: %d, user_id: %d, payment_system_id: %d," + "date: %s, rejected: %b, returned: %b",
+				getId(), getTrip().getId(), getUser().getId(), getPaymentSystem().getId(), getPayDate().toString(),
+				isRejected(), isReturned());
 	}
 
 }

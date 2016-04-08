@@ -11,13 +11,13 @@ public class EditRoutesController {
 	@RequestMapping(value = "/edit/routes", method = RequestMethod.GET)
 	public String getRoutes(Model model) {
 		model.addAttribute("page", "edit-routes");
-		return "routes";
+		return "edit-routes";
 	}
 	
 	@RequestMapping(value = "/edit/routes", method = RequestMethod.POST)
 	public String editRoutes(Model model) {
 		model.addAttribute("page", "edit-routes");
-		return "routes";
+		return "edit-routes";
 	}
 	
 }

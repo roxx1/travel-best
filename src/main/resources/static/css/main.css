@@ -21,6 +21,10 @@ header {
 	text-shadow: 2px 2px 2px white;
 }
 
+.container {
+	min-height: 100%;
+}
+
 .slider h5 {
 	color: #F2F2F2;
 	font-weight: bold;

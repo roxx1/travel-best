@@ -14,6 +14,3 @@ app.controller "editOrdersCtrl", ($scope) ->
 		new Order(7, "Tibet", "Vasya Pupkin", 1800, "PayPal", "2010/03/20", yes, no),
 		new Order(8, "Cuba", "Yan Chan", 900, "PayPal", "2016/03/21", no, no)
 	]
-
-	$scope.isRejected = (index) -> $scope.orders[index].rejected ? "yes" : "no"
-	$scope.isReturned = (index) -> $scope.orders[index].returned ? "yes" : "no"

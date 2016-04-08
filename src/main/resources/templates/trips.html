@@ -12,7 +12,7 @@
 <body>
 
   <header th:replace="layout/components :: header"></header>
-  <nav th:replace="layout/components :: nav"></nav>
+  <nav th:replace="layout/components :: .user-navbar"></nav>
   <div th:replace="layout/components :: #login"></div>
   <div th:replace="layout/components :: #signup"></div>
 
@@ -158,7 +158,7 @@
             </select>
           <p>
             <input type="checkbox" id="agree" />
-            <label for="agree">I agree with all ...</label>
+            <label for="agree">I agree with terms of use</label>
           </p>
 
           <input ng-click="purchaseSubmit()" type="submit" class="btn green darken-2 waves-effect" value="Buy" />
@@ -220,11 +220,9 @@
   <footer th:replace="layout/components :: footer"></footer>
 
   <script src="js/vendor/jquery.js"></script>
-  <script src="js/vendor/jquery.nicescroll.js"></script>
   <script src="js/vendor/materialize.js"></script>
   <script src="js/vendor/angular.js"></script>
-  <script src="js/tripsCtrl.js"></script>
-  <script src="js/trips.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/controller/tripsCtrl.js"></script>
 </body>
 </html>
