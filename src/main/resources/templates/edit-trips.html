@@ -6,7 +6,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="../css/vendor/materialize.css" />
   <link rel="stylesheet" type="text/css" href="../css/main.css" />
-  <link rel="stylesheet" href="../css/edit-trip.css" />
+  <link rel="stylesheet" href="../css/edit-trips.css" />
 </head>
 
 <body>
@@ -40,10 +40,10 @@
 
         <tbody>
 
-          <tr ng-repeat="trip in trips | filter:id | filter:route limitTo:24">
+          <tr ng-repeat="trip in trips | filter:id | filter:route | limitTo:24">
 
             <td>{{order.id}}</td>
-            <td>{{order.customer}}</td>
+            <td>{{order.route}}</td>
           </tr>
 
         </tbody>

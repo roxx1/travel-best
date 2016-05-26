@@ -1,14 +1,12 @@
-var Route, app, content;
+var Route, app, description, destination;
 
 app = angular.module('routes', []);
 
-content = "I markup to Lorem ipsum dolor sit amet, consectetur adipisitaque sunt, illo incidunt nemo, perspiciatis minus? ffectively.";
-
 Route = (function() {
-  function Route(title, price, description, image) {
+  function Route(title, destination1, description1, image) {
     this.title = title;
-    this.price = price;
-    this.description = description;
+    this.destination = destination1;
+    this.description = description1;
     this.image = "../imgs/trips/" + image;
   }
 
@@ -16,12 +14,16 @@ Route = (function() {
 
 })();
 
+description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id inventore saepe dolorem possimus autem voluptatem eos, beatae vel voluptas unde.";
+
+destination = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis beatae culpa dolor mollitia exercitationem nostrum!";
+
 app.controller('routesCtrl', function($scope) {
   var nextToDelete;
   $scope.purchases = 0;
   $scope.currentCard = 0;
   nextToDelete = 0;
-  $scope.trips = [new Route("Tibet", 1200, content, "tibet.jpg"), new Route("Everest", 3400, content, "everest.jpg"), new Route("Cuba", 900, content, "cuba.jpg"), new Route("Egypt", 980, content, "egypt.jpg"), new Route("Paris", 720, content, "paris.jpg"), new Route("Hawaii", 1320, content, "hawaii-island.jpg")];
+  $scope.trips = [new Route("Tibet", description, destination, "tibet.jpg"), new Route("Everest", description, destination, "everest.jpg"), new Route("Cuba", description, destination, "cuba.jpg"), new Route("Egypt", description, destination, "egypt.jpg"), new Route("Paris", description, destination, "paris.jpg"), new Route("Hawaii", description, destination, "hawaii-island.jpg")];
   $scope["delete"] = function(index) {
     nextToDelete = index;
     $('#delete').leanModal();

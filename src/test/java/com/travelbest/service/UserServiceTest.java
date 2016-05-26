@@ -1,6 +1,6 @@
 package com.travelbest.service;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -20,7 +20,7 @@ public class UserServiceTest {
 
 	@Autowired
 	private UserServiceImpl userService;
-
+	
 	@Test
 	@Ignore
 	public void saveTest() {
@@ -37,6 +37,25 @@ public class UserServiceTest {
 		userService.save(jack);
 		User jackFromDatabase = userService.findByEmail("jack.jackson@gmail.com");
 		assertTrue(jack.equals(jackFromDatabase));
+	}
+
+	@Test
+	@Ignore
+	public void deleteTest() {
+		User jack = new User("Jack", "Jackson", "Bla-bla", "jack.jackson@gmail.com", "123");
+		userService.save(jack);
+		userService.delete(jack.getId());
+		assertNull(userService.findById(jack.getId()));
+	}
+	
+	@Test
+	@Ignore
+	public void findAll() {
+		userService.save(new User());
+		userService.save(new User());
+		userService.save(new User());
+		
+		assertEquals(userService.findAll().size(), 3);
 	}
 
 }

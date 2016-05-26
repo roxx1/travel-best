@@ -1,11 +1,11 @@
 app = angular.module('routes', []);
 
-# Random content - should be deleted soon
-content = "I markup to Lorem ipsum dolor sit amet, consectetur adipisitaque sunt, illo incidunt nemo, perspiciatis minus? ffectively."
-
 class Route
-	constructor: (@title, @price, @description, image) ->
+	constructor: (@title, @destination, @description, image) ->
 		@image = "../imgs/trips/" + image
+
+description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id inventore saepe dolorem possimus autem voluptatem eos, beatae vel voluptas unde."
+destination = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis beatae culpa dolor mollitia exercitationem nostrum!"
 
 app.controller 'routesCtrl', ($scope) ->
 
@@ -14,12 +14,12 @@ app.controller 'routesCtrl', ($scope) ->
 	nextToDelete = 0
 
 	$scope.trips = [
-		new Route("Tibet", 1200, content, "tibet.jpg"),
-		new Route("Everest", 3400, content, "everest.jpg"),
-		new Route("Cuba", 900, content, "cuba.jpg"),
-		new Route("Egypt", 980, content, "egypt.jpg"),
-		new Route("Paris", 720, content, "paris.jpg"),
-		new Route("Hawaii", 1320, content, "hawaii-island.jpg")
+		new Route("Tibet", description, destination, "tibet.jpg"),
+		new Route("Everest", description, destination, "everest.jpg"),
+		new Route("Cuba", description, destination, "cuba.jpg"),
+		new Route("Egypt", description, destination, "egypt.jpg"),
+		new Route("Paris", description, destination, "paris.jpg"),
+		new Route("Hawaii", description, destination, "hawaii-island.jpg")
 	]
 
 	$scope.delete = (index) ->

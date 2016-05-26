@@ -8,19 +8,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.travelbest.entity.User;
-import com.travelbest.service.UserService;
+import com.travelbest.entity.Route;
+import com.travelbest.service.RouteService;
 
 @Controller
 @RequestMapping(value = "/api")
-public class UserRESTController {
+public class RouteRESTController {
 	
 	@Autowired
-	private UserService userService;
-
-	@RequestMapping(value = "/users", method = RequestMethod.GET)
-	public @ResponseBody List<User> getAllUsers() {
-		return userService.findAll();
+	private RouteService routeService;
+	
+	@RequestMapping(value = "/routes", method = RequestMethod.GET)
+	public @ResponseBody List<Route> getAllRoutes() {
+		return routeService.findAll();
 	}
 
 }

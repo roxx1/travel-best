@@ -162,6 +162,76 @@ public class Trip {
 	public void setInssuranceSum(double inssuranceSum) {
 		this.inssuranceSum = inssuranceSum;
 	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + amountOfTourists;
+		result = prime * result + ((expirationDate == null) ? 0 : expirationDate.hashCode());
+		result = prime * result + ((guide == null) ? 0 : guide.hashCode());
+		result = prime * result + (int) (id ^ (id >>> 32));
+		long temp;
+		temp = Double.doubleToLongBits(inssuranceSum);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + maxAmountOfTourits;
+		result = prime * result + minAmountOfTourists;
+		temp = Double.doubleToLongBits(price);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((route == null) ? 0 : route.hashCode());
+		result = prime * result + ((tripEndDate == null) ? 0 : tripEndDate.hashCode());
+		result = prime * result + ((tripStartDate == null) ? 0 : tripStartDate.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Trip other = (Trip) obj;
+		if (amountOfTourists != other.amountOfTourists)
+			return false;
+		if (expirationDate == null) {
+			if (other.expirationDate != null)
+				return false;
+		} else if (!expirationDate.equals(other.expirationDate))
+			return false;
+		if (guide == null) {
+			if (other.guide != null)
+				return false;
+		} else if (!guide.equals(other.guide))
+			return false;
+		if (id != other.id)
+			return false;
+		if (Double.doubleToLongBits(inssuranceSum) != Double.doubleToLongBits(other.inssuranceSum))
+			return false;
+		if (maxAmountOfTourits != other.maxAmountOfTourits)
+			return false;
+		if (minAmountOfTourists != other.minAmountOfTourists)
+			return false;
+		if (Double.doubleToLongBits(price) != Double.doubleToLongBits(other.price))
+			return false;
+		if (route == null) {
+			if (other.route != null)
+				return false;
+		} else if (!route.equals(other.route))
+			return false;
+		if (tripEndDate == null) {
+			if (other.tripEndDate != null)
+				return false;
+		} else if (!tripEndDate.equals(other.tripEndDate))
+			return false;
+		if (tripStartDate == null) {
+			if (other.tripStartDate != null)
+				return false;
+		} else if (!tripStartDate.equals(other.tripStartDate))
+			return false;
+		return true;
+	}
 
 	@Override
 	public String toString() {

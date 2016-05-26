@@ -9,6 +9,7 @@
   "author": "saka",
   "license": "ISC",
   "devDependencies": {
+    "chartjs": "^0.3.23",
     "gulp": "^3.9.1",
     "gulp-coffee": "^2.3.1",
     "gulp-plumber": "^1.1.0",

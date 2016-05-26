@@ -19,7 +19,7 @@ public class TripRESTController {
 	private TripService tripService;
 	
 	@RequestMapping(value = "/trips", method = RequestMethod.GET)
-	public @ResponseBody List<Trip> getAllOrders() {
+	public @ResponseBody List<Trip> getAllTrips() {
 		return tripService.findAll();
 	}
 

@@ -108,6 +108,58 @@ public class Order {
 		this.returned = returned;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (id ^ (id >>> 32));
+		result = prime * result + ((payDate == null) ? 0 : payDate.hashCode());
+		result = prime * result + ((paymentSystem == null) ? 0 : paymentSystem.hashCode());
+		result = prime * result + (rejected ? 1231 : 1237);
+		result = prime * result + (returned ? 1231 : 1237);
+		result = prime * result + ((trip == null) ? 0 : trip.hashCode());
+		result = prime * result + ((user == null) ? 0 : user.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Order other = (Order) obj;
+		if (id != other.id)
+			return false;
+		if (payDate == null) {
+			if (other.payDate != null)
+				return false;
+		} else if (!payDate.equals(other.payDate))
+			return false;
+		if (paymentSystem == null) {
+			if (other.paymentSystem != null)
+				return false;
+		} else if (!paymentSystem.equals(other.paymentSystem))
+			return false;
+		if (rejected != other.rejected)
+			return false;
+		if (returned != other.returned)
+			return false;
+		if (trip == null) {
+			if (other.trip != null)
+				return false;
+		} else if (!trip.equals(other.trip))
+			return false;
+		if (user == null) {
+			if (other.user != null)
+				return false;
+		} else if (!user.equals(other.user))
+			return false;
+		return true;
+	}
+
 	public String toString() {
 		return String.format(
 				"id: %d, trip_id: %d, user_id: %d, payment_system_id: %d," + "date: %s, rejected: %b, returned: %b",
