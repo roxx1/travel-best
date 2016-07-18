@@ -1,78 +1,116 @@
 <!DOCTYPE html>
-<html ng-app="edit-trips" ng-controller="editTripsCtrl" >
+<html ng-app="edit-trips" ng-controller="editTripsCtrl">
 <head>
-  <title>Travel Best - edit Trips</title>
-  <link rel="shortcut icon" type="image/png" href="../imgs/logo/travelbest.png"/>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <link rel="stylesheet" type="text/css" href="../css/vendor/materialize.css" />
-  <link rel="stylesheet" type="text/css" href="../css/main.css" />
-  <link rel="stylesheet" href="../css/edit-trips.css" />
+<title>Travel Best - edit Trips</title>
+<link rel="shortcut icon" type="image/png"
+	href="../imgs/logo/travelbest.png" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet" />
+<link rel="stylesheet" type="text/css"
+	href="../css/vendor/materialize.css" />
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+<link rel="stylesheet" href="../css/edit-trips.css" />
 </head>
 
 <body>
-  <!-- Modals -->
-  
-  <!-- End Modals -->
+	<!-- Modals -->
 
-  <nav th:replace="layout/components :: .admin-navbar"></nav>
+	<!-- End Modals -->
 
-  <div class="container">
-      <table class="bordered hoverable">
-        <thead>
-          <tr>
-            <th data-field="id">
-              <div class="input-field">
-                <input id="order-id" type="number" class="validate" ng-model="id"/>
-                <label for="order-id">ID</label>
-              </div>
-            </th>
-            
-            <th data-field="route">
-              <div class="input-field">
-                <input id="route" type="number" class="validate" ng-model="route"/>
-                <label for="route">Route</label>
-              </div>
-            </th>
+	<nav th:replace="layout/components :: .admin-navbar"></nav>
 
+	<div class="container">
+		<table class="bordered hoverable">
+			<thead>
+				<tr>
+					<th data-field="id">
+						<div class="input-field">
+							<input id="order-id" type="number" class="validate" ng-model="id" />
+							<label for="order-id">ID</label>
+						</div>
+					</th>
 
-          </tr>
-        </thead>
+					<th data-field="route">
+						<div class="input-field">
+							<input id="route" type="number" class="validate" ng-model="route" />
+							<label for="route">Route</label>
+						</div>
+					</th>
 
-        <tbody>
+					<th data-field="price">
+						<div class="input-field">
+							<input id="price" type="number" class="validate" ng-model="price" />
+							<label for="price">Price</label>
+						</div>
+					</th>
 
-          <tr ng-repeat="trip in trips | filter:id | filter:route | limitTo:24">
+					<th data-field="expiration-date">
+						<div class="input-field">
+							<input id="expiration-date" type="date" class="validate"
+								ng-model="expirationDate" />
+						</div>
+					</th>
 
-            <td>{{order.id}}</td>
-            <td>{{order.route}}</td>
-          </tr>
+					<th data-field="start-date">
+						<div class="input-field">
+							<input id="start-date" type="date" class="validate"
+								ng-model="startDate" />
+						</div>
+					</th>
 
-        </tbody>
-      </table>
+					<th data-field="end-date">
+						<div class="input-field">
+							<input id="end-date" type="date" class="validate"
+								ng-model="endDate" />
+						</div>
+					</th>
 
-      <ul class="pagination center">
-        <li class="disabled">
-          <a href="#!">
-            <i class="material-icons">chevron_left</i>
-            </a>
-          </li>
-        <li class="active green darken-2"><a href="#!">1</a></li>
-        <li class="waves-effect"><a href="#!">2</a></li>
-        <li class="waves-effect"><a href="#!">3</a></li>
-        <li class="waves-effect"><a href="#!">4</a></li>
-        <li class="waves-effect"><a href="#!">5</a></li>
-        <li class="waves-effect">
-          <a href="#!">
-            <i class="material-icons">chevron_right</i>
-          </a>
-        </li>
-      </ul>
-  </div>
+					<th data-field="amount-of-tourists">
+						<div class="input-field">
+							<input id="amount-of-tourists" type="number" class="validate"
+								ng-model="amount-of-tourists" /> <label
+								for="amountofTourists">AOT</label>
+						</div>
+					</th>
+				</tr>
+			</thead>
 
-  <footer th:replace="layout/components :: footer"></footer>
+			<tbody>
 
-  <script src="../js/vendor/jquery.js"></script>
-  <script src="../js/vendor/materialize.js"></script>
-  <script src="../js/vendor/angular.js"></script>
-  <script src="../js/controller/editTripsCtrl.js"></script>
+				<tr
+					ng-repeat="trip in trips | limitTo:24">
+
+					<td>{{trip.id}}</td>
+					<td>{{trip.route}}</td>
+					<td>{{trip.price}}</td>
+					<td>{{trip.expirationDate}}</td>
+					<td>{{trip.startDate}}</td>
+					<td>{{trip.endDate}}</td>
+					<td>{{trip.amountOfTourists}}</td>
+				</tr>
+
+			</tbody>
+		</table>
+
+		<ul class="pagination center">
+			<li class="disabled"><a href="#!"> <i class="material-icons">chevron_left</i>
+			</a></li>
+			<li class="active green darken-2"><a href="#!">1</a></li>
+			<li class="waves-effect"><a href="#!">2</a></li>
+			<li class="waves-effect"><a href="#!">3</a></li>
+			<li class="waves-effect"><a href="#!">4</a></li>
+			<li class="waves-effect"><a href="#!">5</a></li>
+			<li class="waves-effect"><a href="#!"> <i
+					class="material-icons">chevron_right</i>
+			</a></li>
+		</ul>
+	</div>
+
+	<footer th:replace="layout/components :: footer"></footer>
+
+	<script src="../js/vendor/jquery.js"></script>
+	<script src="../js/vendor/materialize.js"></script>
+	<script src="../js/vendor/angular.js"></script>
+	<script src="../js/controller/editTripsCtrl.js"></script>
 </body>
 </html>
