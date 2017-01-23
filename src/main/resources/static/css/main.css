@@ -164,6 +164,7 @@ footer {
 	position: fixed;
 	top: 0;
 	z-index: 5;
+	transition: all 3s ease-in-out;
 }
 
 @media all and (max-width: 600px) {

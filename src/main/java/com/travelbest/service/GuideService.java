@@ -1,20 +1,14 @@
 package com.travelbest.service;
 
-import java.util.List;
-
+import com.travelbest.entity.Guide;
 import org.springframework.stereotype.Service;
 
-import com.travelbest.entity.Guide;
+import java.util.List;
 
 @Service
 public interface GuideService {
-
-	public void save(Guide guide);
-	
-	public void delete(long id);
-	
-	public Guide findById(long id);
-	
-	public List<Guide> findAll();
-	
+    void save(Guide guide);
+    void delete(Long id);
+    Guide findById(Long id);
+    List<Guide> findAll();
 }

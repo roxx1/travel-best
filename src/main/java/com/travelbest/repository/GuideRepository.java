@@ -1,11 +1,11 @@
 package com.travelbest.repository;
 
+import com.travelbest.entity.Guide;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.stereotype.Repository;
 
-import com.travelbest.entity.Guide;
-
 @Repository
+@RepositoryRestResource
 public interface GuideRepository extends JpaRepository<Guide, Long> {
-
 }

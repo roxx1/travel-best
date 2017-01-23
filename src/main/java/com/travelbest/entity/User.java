@@ -1,96 +1,55 @@
 package com.travelbest.entity;
 
-import javax.persistence.Column;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.*;
+import org.hibernate.annotations.CascadeType;
+import org.hibernate.validator.constraints.Email;
+
+import javax.persistence.*;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
-import org.hibernate.annotations.GenericGenerator;
+@Entity(name = "users")
+@Data
+@NoArgsConstructor
+public class User implements Serializable {
 
-@Entity
-@Table(name = "users")
-public class User {
+    @Id
+    @GeneratedValue
+    private Long id;
 
-	@Id
-	@GeneratedValue(generator = "increment")
-	@GenericGenerator(name = "increment", strategy = "increment")
-	private long id;
+    @NotNull
+    private String username;
 
-	private String name;
-	private String surname;
+    @Email
+    private String email;
 
-	@Column(name = "middle_name")
-	private String middleName;
+    @NotNull
+    private String password;
 
-	private String email;
+    @OneToOne
+    @JoinColumn(name = "role_id")
+    @Cascade(CascadeType.ALL)
+    private Role role;
 
-	private String password;
+    public User(String username, String email, String password, Role role) {
+        this.setUsername(username);
+        this.setEmail(email);
+        this.setPassword(password);
+        this.setRole(role);
+    }
 
-	public User() {
+    @JsonIgnore
+    public String getPassword() {
+        return this.password;
+    }
 
-	}
-
-	public User(String name, String surname, String middleName, String email, String password) {
-		setName(name);
-		setSurname(surname);
-		setMiddleName(middleName);
-		setEmail(email);
-		setPassword(password);
-	}
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getSurname() {
-		return surname;
-	}
-
-	public void setSurname(String surname) {
-		this.surname = surname;
-	}
-
-	public String getMiddleName() {
-		return middleName;
-	}
-
-	public void setMiddleName(String middleName) {
-		this.middleName = middleName;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	@Override
-	public String toString() {
-		return String.format("id: %d, email: %s, %s %s %s", getId(), getEmail(), getName(), getSurname(),
-				getMiddleName());
-	}
-
+    @JsonProperty
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

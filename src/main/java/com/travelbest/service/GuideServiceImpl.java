@@ -1,12 +1,11 @@
 package com.travelbest.service;
 
-import java.util.List;
-
+import com.travelbest.entity.Guide;
+import com.travelbest.repository.GuideRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.travelbest.entity.Guide;
-import com.travelbest.repository.GuideRepository;
+import java.util.List;
 
 @Service
 public class GuideServiceImpl implements GuideService {
@@ -20,12 +19,12 @@ public class GuideServiceImpl implements GuideService {
 	}
 
 	@Override
-	public void delete(long id) {
+	public void delete(Long id) {
 		guideRepository.delete(id);
 	}
 
 	@Override
-	public Guide findById(long id) {
+	public Guide findById(Long id) {
 		return guideRepository.findOne(id);
 	}
 

@@ -1,12 +1,11 @@
 package com.travelbest.service;
 
-import java.util.List;
-
+import com.travelbest.entity.Trip;
+import com.travelbest.repository.TripRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.travelbest.entity.Trip;
-import com.travelbest.repository.TripRepository;
+import java.util.List;
 
 @Service
 public class TripServiceImpl implements TripService {
@@ -15,17 +14,17 @@ public class TripServiceImpl implements TripService {
 	private TripRepository tripRepository;
 	
 	@Override
-	public void save(Trip trip) {
-		tripRepository.save(trip);
-	}
+	public Trip save(Trip trip) {
+		return tripRepository.save(trip);
+    }
 
 	@Override
-	public void delete(long id) {
+	public void delete(Long id) {
 		tripRepository.delete(id);
 	}
 
 	@Override
-	public Trip findById(long id) {
+	public Trip findById(Long id) {
 		return tripRepository.findOne(id);
 	}
 

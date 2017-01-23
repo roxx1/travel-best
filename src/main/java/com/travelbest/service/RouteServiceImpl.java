@@ -1,12 +1,11 @@
 package com.travelbest.service;
 
-import java.util.List;
-
+import com.travelbest.entity.Route;
+import com.travelbest.repository.RouteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.travelbest.entity.Route;
-import com.travelbest.repository.RouteRepository;
+import java.util.List;
 
 @Service
 public class RouteServiceImpl implements RouteService {
@@ -15,12 +14,12 @@ public class RouteServiceImpl implements RouteService {
 	private RouteRepository routeRepository;
 
 	@Override
-	public void save(Route route) {
-		routeRepository.save(route);
-	}
+	public Route save(Route route) {
+		return routeRepository.save(route);
+    }
 
 	@Override
-	public void delete(long id) {
+	public void delete(Long id) {
 		routeRepository.delete(id);
 	}
 
@@ -30,7 +29,7 @@ public class RouteServiceImpl implements RouteService {
 	}
 
 	@Override
-	public Route findById(long id) {
+	public Route findById(Long id) {
 		return routeRepository.findOne(id);
 	}
 

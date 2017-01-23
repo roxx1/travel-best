@@ -1,20 +1,14 @@
 package com.travelbest.service;
 
-import java.util.List;
-
+import com.travelbest.entity.PaymentSystem;
 import org.springframework.stereotype.Service;
 
-import com.travelbest.entity.PaymentSystem;
+import java.util.List;
 
 @Service
 public interface PaymentSystemService {
-
-	void save(PaymentSystem paymentSystem);
-
-	void delete(long id);
-
-	List<PaymentSystem> findAll();
-
-	PaymentSystem findById(long id);
-	
+    void save(PaymentSystem paymentSystem);
+    void delete(Long id);
+    List<PaymentSystem> findAll();
+    PaymentSystem findById(Long id);
 }

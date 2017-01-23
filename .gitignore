@@ -1,5 +1,11 @@
-\bower_componenets
+\target
 \build
 \gradle
+.idea
+.settings
 \bin
 \.gradle
+*.iml
+*.ipr
+*.iws
+

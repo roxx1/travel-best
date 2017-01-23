@@ -8,26 +8,20 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
-@Entity(name = "routes")
+@Entity(name = "roles")
 @Data
 @NoArgsConstructor
-public class Route {
+public class Role {
 
     @Id
     @GeneratedValue
     private Long id;
 
     @NotNull
-    private String title;
+    private String label;
 
-    private String description;
-
-    private String image;
-
-    public Route(String title, String description, String image) {
-        this.setTitle(title);
-        this.setDescription(description);
-        this.setImage(image);
+    public Role(String label) {
+        this.label = label;
     }
 
 }

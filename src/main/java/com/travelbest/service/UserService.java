@@ -1,20 +1,15 @@
 package com.travelbest.service;
 
-import java.util.List;
-
+import com.travelbest.entity.User;
 import org.springframework.stereotype.Service;
 
-import com.travelbest.entity.User;
+import java.util.List;
 
 @Service
 public interface UserService {
-	void save(User user);
-
-	void delete(long id);
-
-	List<User> findAll();
-
-	User findById(long id);
-
-	User findByEmail(String email);
+    void save(User user);
+    void delete(Long id);
+    List<User> findAll();
+    User findById(Long id);
+    User findByEmail(String email);
 }

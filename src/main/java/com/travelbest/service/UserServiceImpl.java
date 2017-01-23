@@ -1,12 +1,11 @@
 package com.travelbest.service;
 
-import java.util.List;
-
+import com.travelbest.entity.User;
+import com.travelbest.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.travelbest.entity.User;
-import com.travelbest.repository.UserRepository;
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -14,24 +13,13 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserRepository userRepository;
 
-	public UserServiceImpl() {
-	}
-
-	public UserServiceImpl(UserRepository userDAO) {
-		setUserDAO(userDAO);
-	}
-
-	public void setUserDAO(UserRepository userDAO) {
-		this.userRepository = userDAO;
-	}
-
 	@Override
 	public void save(User user) {
 		userRepository.save(user);
 	}
 
 	@Override
-	public void delete(long id) {
+	public void delete(Long id) {
 		userRepository.delete(id);
 	}
 
@@ -41,7 +29,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User findById(long id) {
+	public User findById(Long id) {
 		return userRepository.findOne(id);
 	}
 

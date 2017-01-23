@@ -1,20 +1,14 @@
 package com.travelbest.service;
 
-import java.util.List;
-
+import com.travelbest.entity.Route;
 import org.springframework.stereotype.Service;
 
-import com.travelbest.entity.Route;
+import java.util.List;
 
 @Service
 public interface RouteService {
-
-	void save(Route route);
-
-	void delete(long id);
-
-	List<Route> findAll();
-
-	Route findById(long id);
-
+    Route save(Route route);
+    void delete(Long id);
+    List<Route> findAll();
+    Route findById(Long id);
 }

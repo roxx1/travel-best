@@ -1,20 +1,14 @@
 package com.travelbest.service;
 
-import java.util.List;
-
+import com.travelbest.entity.Order;
 import org.springframework.stereotype.Service;
 
-import com.travelbest.entity.Order;
+import java.util.List;
 
 @Service
 public interface OrderService {
-
-	public void save(Order order);
-
-	public void delete(long id);
-
-	public Order findById(long id);
-
-	public List<Order> findAll();
-
+	void save(Order order);
+	void delete(Long id);
+	Order findById(Long id);
+	List<Order> findAll();
 }

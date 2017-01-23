@@ -1,20 +1,14 @@
 package com.travelbest.service;
 
-import java.util.List;
-
+import com.travelbest.entity.Trip;
 import org.springframework.stereotype.Service;
 
-import com.travelbest.entity.Trip;
+import java.util.List;
 
 @Service
 public interface TripService {
-
-	public void save(Trip trip);
-
-	public void delete(long id);
-
-	public Trip findById(long id);
-
-	public List<Trip> findAll();
-
+    Trip save(Trip trip);
+    void delete(Long id);
+    Trip findById(Long id);
+    List<Trip> findAll();
 }
