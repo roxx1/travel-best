@@ -1,0 +1,48 @@
+nav {
+  top: 0;
+  position: fixed;
+  z-index: 5;
+  height: 10vh;
+}
+
+nav > ul li {
+  text-align: center;
+  width: 120px;
+}
+
+nav > ul li>a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #111;
+  height: 10vh;
+  width: 100%;
+}
+
+nav > ul li>a:hover {
+  background-color: rgba(0,0,0, 0.2);
+  color: #fafafa;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.1s ease-in-out;
+}
+
+.is-active {
+  background-color: rgba(0,0,0, 0.2);
+  color: #fafafa;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.1s ease-in-out;
+  border-bottom: 3px solid #212121;
+}
+
+@media all and (max-width: 600px) {
+  nav > ul li {
+    width: 80px;
+  }
+
+  nav > ul li>a {
+    padding: 5px;
+    width: 80px;
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "short_name": "TravelBest",
+  "name": "TravelBest - The world's best traveling service",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
+}

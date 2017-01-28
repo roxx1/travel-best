@@ -1,0 +1,218 @@
+<div class="buy-now card hoverable">
+
+  <div class="card-content">
+    <img
+      src="{{currentTrip.route.image}}"
+      class="responsive-image"
+      alt="No Image" />
+
+    <div class="title">
+      {{currentTrip.route.title}}
+      <b>{{currentTrip.price}}$</b>
+    </div>
+
+    <div class="card">
+      <p class="description">
+        {{currentTrip.route.description}}
+      </p>
+    </div>
+
+    <ul class="collapsible" data-collapsible="accordion">
+      
+      <!-- User Details -->
+      <li class="user-details">
+        <div class="collapsible-header">
+          <i class="material-icons">
+            perm_identity
+          </i>
+          User Details
+        </div>
+        <div class="collapsible-body">
+          
+          <!-- First Name -->
+          <div class="input-field">
+            <input
+              placeholder="First Name"
+              id="first_name"
+              type="text"
+              class="validate" />
+            <label for="first_name">First Name</label>
+          </div>
+
+          <!-- Last Name -->
+          <div class="input-field">
+            <input
+              placeholder="Last Name"
+              id="last_name"
+              type="text"
+              class="validate" />
+            <label for="last_name">Last Name</label>
+          </div>
+
+          <!-- Middle Name -->
+          <div class="input-field">
+            <input
+              placeholder="Middle Name"
+              id="middle_name"
+              type="text"
+              class="validate" />
+            <label for="middle_name">Middle Name</label>
+          </div>
+
+          <!-- Email  -->
+          <div class="input-field">
+            <input
+              placeholder="Email"
+              id="email"
+              type="email"
+              class="validate" />
+            <label for="email">Email</label>
+          </div>
+
+          <!-- Phone Number -->
+          <div class="input-field">
+            <input
+              placeholder="Phone"
+              id="phone"
+              type="number"
+              class="validate" />
+            <label for="phone">Phone Number</label>
+          </div>
+
+        </div>
+      </li>
+
+      <!-- Trip Details -->
+      <li>
+        <div class="collapsible-header active">
+          <i class="material-icons">
+            description
+          </i>
+          Trip Details
+        </div>
+        <div class="collapsible-body">
+          <ul class="collection with-header">
+            
+            <!-- Trip Destination -->
+            <li class="collection-item">
+              <div>
+                Destination
+                <span class="secondary-content">
+                  {{currentTrip.route.title}}
+                </span>
+              </div>
+            </li>
+            
+            <!-- Trip Price -->
+            <li class="collection-item">
+              <div>
+                Price
+                <span class="secondary-content">
+                  {{currentTrip.price | currency:'USD'}}
+                </span>
+              </div>
+            </li>
+
+            <!-- Trip Inssurance Sum -->
+            <li class="collection-item">
+              <div>
+                Inssurance Sum
+                <span class="secondary-content">
+                  {{currentTrip.price * 0.1 | currency:'USD'}}
+                </span>
+              </div>
+            </li>
+
+            <!-- Trip Tourists -->
+            <li class="collection-item">
+              <div>
+                Tourists
+                <span class="secondary-content">
+                  8/12
+                </span>
+              </div>
+            </li>
+
+            <!-- Trip Expiration date -->
+            <li class="collection-item">
+              <div>
+                Expiration date
+                <span class="secondary-content">
+                  2016-04-15
+                </span>
+              </div>
+            </li>
+
+            <!-- Trip Start Date -->
+            <li class="collection-item">
+              <div>
+                Start Date
+                <span class="secondary-content">
+                  2016-04-20
+                </span>
+              </div>
+            </li>
+
+            <!-- Trip End Date -->
+            <li class="collection-item">
+              <div>
+                End Date
+                <span class="secondary-content">
+                  2016-04-30
+                </span>
+              </div>
+            </li>
+
+           </ul>
+        </div>
+      </li>
+
+    </ul>
+    <div class="card">
+      <form>
+        <select class="icons">
+          <option
+            value=""
+            disabled="disabled"
+            selected="selected">
+              Payment System
+          </option>
+
+          <option
+            value="paypal"
+            data-icon="assets/imgs/payment-systems/paypal.png"
+            class="left circle">
+              PayPal
+          </option>
+
+          <option
+            value="payoneer"
+            data-icon="assets/imgs/payment-systems/payoneer.png"
+            class="left circle">
+              Payoneer
+          </option>
+
+          <option
+            value="stripe"
+            data-icon="assets/imgs/payment-systems/cash.jpg"
+            class="left circle">
+              Stripe
+          </option>
+
+          <option
+            value="local_bank"
+            data-icon="assets/imgs/payment-systems/bank.jpg"
+            class="left circle">
+              Local Bank
+          </option>
+        </select>
+        
+        <button (click)="buy()" class="buy btn-large hoverable waves-effect green darken-2">
+          <i class="material-icons left">add_shopping_cart</i>
+          BUY
+        </button>
+      </form>
+    </div>
+
+  </div>
+</div>

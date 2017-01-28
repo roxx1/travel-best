@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="search hoverable input-field col s12">
+    <i class="material-icons prefix">search</i>
+    <input
+      type="text"
+      id="search-bar"
+      placeholder="search"
+      [(ngModel)]="term" />
+  </div>
+
+   <div class="col s12 m6 l4"
+    *ngFor="let trip of trips 
+      | searchByTitle: term
+      | paginate: { itemsPerPage: 12, currentPage: p }">
+      
+      <div class="card hoverable">
+        
+        <div class="card-image">
+          <img src="{{trip.route.image}}" />
+          <span class="card-title">
+            {{trip.route.title}}
+            <b>{{trip.price}}</b>
+          </span>
+        </div>
+        
+        <div class="card-content">
+          <p>
+            {{trip.route.description}}
+          </p>
+        </div>
+        
+        <div class="card-action">
+          <button
+            (click)="buyNow(trip)"
+            class="btn green darken-2 waves-effect">
+              <span class="material-icons">shopping_basket</span>
+          </button>
+            
+          <button
+            (click)="addToShoppingCart(trip)"
+            class="btn tooltipped green darken-2 waves-effect"
+            data-position="top"
+            data-delay="50"
+            data-tooltip="Add to shopping card">
+              <span class="material-icons">shop_two</span>
+          </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<pagination-controls
+  (pageChange)="p = $event"
+  directionLinks="true"
+  autoHide="true"
+  previousLabel="prev"
+  nextLabel="next"
+  screenReaderPaginationLabel="Pagination"
+  screenReaderPageLabel="page"
+  screenReaderCurrentLabel="You're on page">
+</pagination-controls>

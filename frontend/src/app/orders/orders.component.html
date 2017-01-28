@@ -1,0 +1,107 @@
+<div class="orders">
+  
+  <p class="hoverable">In Shopping card</p>
+  <table class="responsive-table centered highlight hoverable white darken-1">
+    <thead>
+      <tr>
+        <th data-field="trip">Trip</th>
+        <th data-field="price">Price</th>
+        <th data-field="expiration-date">End Date</th>
+        <th data-field="amount-of-tourists">Tourists</th>
+        <th data-field="approve">Approve</th>
+        <th data-field="discard">Discard</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let order of orders">
+
+        <td>
+          <div class="chip">
+            <img src="{{order.trip.route.image}}" alt="No image" />
+            {{order.trip.route.title}}
+          </div>
+        </td>
+
+        <td>{{order.trip.price | currency:'USD'}}</td>
+
+        <td>{{order.endDate | date: 'dd/MM/yyyy'}}</td>
+
+        <td>
+          <div class="progress">
+            <div class="determinate tooltipped">
+              {{order.trip.amountOfTourists/order.trip.minAmountOfTourists}}
+            </div>
+          </div>
+        </td>
+
+        <td>
+          <button
+            (click)="pay(order)"
+            class="btn green darken-2 hoverable waves-effect">
+            <i class="material-icons">shop</i>
+          </button>
+        </td>
+
+        <td>
+          <button
+            (click)="delete(order)"
+            class="btn green darken-2 hoverable waves-effect">
+              <i class="material-icons">delete</i>
+          </button>
+        </td>
+
+      </tr>
+
+    </tbody>
+  </table>
+
+  <p class="hoverable">Paid Trips</p>
+  <table class="responsive-table centered highlight hoverable white darken-1">
+    <thead>
+      <tr>
+        <th data-field="trip">Trip</th>
+        <th data-field="price">Price</th>
+        <th data-field="pay-date">Pay Date</th>
+        <th data-field="expiration-date">End Date</th>
+        <th data-field="amount-of-tourists">Tourists</th>
+        <th data-field="reject">Reject</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let order of paidOrders">
+        <td>
+          <div class="chip">
+            <img src="{{order.trip.route.image}}" alt="No image" />
+            {{order.trip.route.title}}
+          </div>
+        </td>
+
+        <td>{{order.trip.price | currency:'USD'}}</td>
+
+        <td>{{order.payDate | date: 'dd/MM/yyyy'}}</td>
+
+        <td>{{order.endDate | date: 'dd/MM/yyyy'}}</td>
+
+        <td>
+          <div class="progress">
+            <div class="determinate"
+              [attr.data-tooltip]="order.trip.amountOfTourists + '/' + order.trip.minAmountOfTourists">
+              {{order.trip.amountOfTourists / order.trip.minAmoundOfTourists}}
+              </div>
+          </div>
+        </td>
+
+        <td>
+          <button
+            (click)="reject(order)"
+            class="btn green darken-2 hoverable waves-effect">
+            <i class="material-icons">delete</i>
+          </button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
