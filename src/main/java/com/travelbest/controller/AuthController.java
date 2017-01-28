@@ -90,9 +90,11 @@ public class AuthController extends BaseController {
             LOG.error(ex.getMessage());
             return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
         }
+
         final Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(name, password)
+            new UsernamePasswordAuthenticationToken(name, password)
         );
+
         SecurityContextHolder.getContext().setAuthentication(authentication);
         final String token = jwtTokenUtil.generateToken(userDetails);
         return ResponseEntity.ok(new JwtAuthenticationResponse(token));

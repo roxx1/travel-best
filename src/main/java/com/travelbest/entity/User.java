@@ -4,12 +4,11 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.*;
+import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.*;
-import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
@@ -23,9 +22,11 @@ public class User implements Serializable {
     private Long id;
 
     @NotNull
+    @Column(nullable = false, unique = true)
     private String username;
 
     @Email
+    @Column(nullable = false, unique = true)
     private String email;
 
     @NotNull

@@ -23,7 +23,7 @@ public class Trip {
 
 	@OneToOne
 	@JoinColumn(name = "guide_id")
-	private Guide guide;
+	private User guide;
 
 	@Column(name = "price")
     @NotNull
