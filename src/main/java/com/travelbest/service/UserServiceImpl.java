@@ -13,38 +13,38 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
 
-	@Autowired
-	private UserRepository userRepository;
+  @Autowired
+  private UserRepository userRepository;
 
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
-	@Override
-	public void save(User user) {
+  @Override
+  public void save(User user) {
         user.setPassword(passwordEncoder().encode(user.getPassword()));
-		userRepository.save(user);
-	}
+    userRepository.save(user);
+  }
 
-	@Override
-	public void delete(Long id) {
-		userRepository.delete(id);
-	}
+  @Override
+  public void delete(Long id) {
+    userRepository.delete(id);
+  }
 
-	@Override
-	public List<User> findAll() {
-		return userRepository.findAll();
-	}
+  @Override
+  public List<User> findAll() {
+    return userRepository.findAll();
+  }
 
-	@Override
-	public User findById(Long id) {
-		return userRepository.findOne(id);
-	}
+  @Override
+  public User findById(Long id) {
+    return userRepository.findOne(id);
+  }
 
-	@Override
-	public User findByEmail(String email) {
-		return userRepository.findUserByEmail(email);
-	}
+  @Override
+  public User findByEmail(String email) {
+    return userRepository.findUserByEmail(email);
+  }
 
 }

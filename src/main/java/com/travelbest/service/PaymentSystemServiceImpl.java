@@ -10,27 +10,27 @@ import java.util.List;
 @Service
 public class PaymentSystemServiceImpl implements PaymentSystemService {
 
-	@Autowired
-	private PaymentSystemRepository paymentSystemRepository;
+  @Autowired
+  private PaymentSystemRepository paymentSystemRepository;
 
-	@Override
-	public void save(PaymentSystem paymentSystem) {
-		paymentSystemRepository.save(paymentSystem);
-	}
+  @Override
+  public void save(PaymentSystem paymentSystem) {
+    paymentSystemRepository.save(paymentSystem);
+  }
 
-	@Override
-	public void delete(Long id) {
-		paymentSystemRepository.delete(id);
-	}
+  @Override
+  public void delete(Long id) {
+    paymentSystemRepository.delete(id);
+  }
 
-	@Override
-	public List<PaymentSystem> findAll() {
-		return paymentSystemRepository.findAll();
-	}
+  @Override
+  public List<PaymentSystem> findAll() {
+    return paymentSystemRepository.findAll();
+  }
 
-	@Override
-	public PaymentSystem findById(Long id) {
-		return paymentSystemRepository.findOne(id);
-	}
+  @Override
+  public PaymentSystem findById(Long id) {
+    return paymentSystemRepository.findOne(id);
+  }
 
 }

@@ -7,8 +7,8 @@ import java.util.List;
 
 @Service
 public interface TripService {
-    Trip save(Trip trip);
-    void delete(Long id);
-    Trip findById(Long id);
-    List<Trip> findAll();
+  Trip save(Trip trip);
+  void delete(Long id);
+  Trip findById(Long id);
+  List<Trip> findAll();
 }

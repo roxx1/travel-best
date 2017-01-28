@@ -10,27 +10,27 @@ import java.util.List;
 @Service
 public class RouteServiceImpl implements RouteService {
 
-	@Autowired
-	private RouteRepository routeRepository;
+  @Autowired
+  private RouteRepository routeRepository;
 
-	@Override
-	public Route save(Route route) {
-		return routeRepository.save(route);
+  @Override
+  public Route save(Route route) {
+    return routeRepository.save(route);
     }
 
-	@Override
-	public void delete(Long id) {
-		routeRepository.delete(id);
-	}
+  @Override
+  public void delete(Long id) {
+    routeRepository.delete(id);
+  }
 
-	@Override
-	public List<Route> findAll() {
-		return routeRepository.findAll();
-	}
+  @Override
+  public List<Route> findAll() {
+    return routeRepository.findAll();
+  }
 
-	@Override
-	public Route findById(Long id) {
-		return routeRepository.findOne(id);
-	}
+  @Override
+  public Route findById(Long id) {
+    return routeRepository.findOne(id);
+  }
 
 }

@@ -1,11 +1,14 @@
 # TRAVELBEST
 
+
 Spring Boot/Angular 2 sample app
+
 
 First build UI
 - `cd frontend`
 - `npm install`
 - `ng build --prod --aot`
+
 
 Then build the service
 
@@ -14,6 +17,7 @@ Then build the service
 Finally, you will be able to run the app
 
 - `java -jar build/libs/[name].jar`
+
 
 You can start dev UI server using
 - `ng serve`

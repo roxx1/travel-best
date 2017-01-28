@@ -10,27 +10,27 @@ import java.util.List;
 @Service
 public class OrderServiceImpl implements OrderService {
 
-	@Autowired
-	private OrderRepository orderRepository;
+  @Autowired
+  private OrderRepository orderRepository;
 
-	@Override
-	public void save(Order order) {
-		orderRepository.save(order);
-	}
+  @Override
+  public void save(Order order) {
+    orderRepository.save(order);
+  }
 
-	@Override
-	public void delete(Long id) {
-		orderRepository.delete(id);
-	}
+  @Override
+  public void delete(Long id) {
+    orderRepository.delete(id);
+  }
 
-	@Override
-	public Order findById(Long id) {
-		return orderRepository.findOne(id);
-	}
+  @Override
+  public Order findById(Long id) {
+    return orderRepository.findOne(id);
+  }
 
-	@Override
-	public List<Order> findAll() {
-		return orderRepository.findAll();
-	}
+  @Override
+  public List<Order> findAll() {
+    return orderRepository.findAll();
+  }
 
 }

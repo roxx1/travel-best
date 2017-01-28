@@ -7,8 +7,8 @@ import java.util.List;
 
 @Service
 public interface RouteService {
-    Route save(Route route);
-    void delete(Long id);
-    List<Route> findAll();
-    Route findById(Long id);
+  Route save(Route route);
+  void delete(Long id);
+  List<Route> findAll();
+  Route findById(Long id);
 }
