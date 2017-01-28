@@ -7,18 +7,20 @@
 
   <form>
     <div class="input-field">
-      <i class="material-icons prefix">mail</i>
+      <i class="material-icons prefix">person_outline</i>
       <input
+        [(ngModel)]="username"
         class="input-data"
-        type="email"
-        name="email"
-        placeholder="Your email"
+        type="text"
+        name="username"
+        placeholder="Your username"
         required="required" />
     </div>
     
     <div class="input-field">
       <i class="material-icons prefix">vpn_key</i>
       <input
+        [(ngModel)]="password"
         class="input-data"
         type="password"
         name="password"
@@ -27,10 +29,10 @@
     </div>
     
     <div class="btn-box">
-      <button class="btn-large green darken-2 waves-effect">
+      <button (click)="reset()" class="btn-large green darken-2 waves-effect">
         Reset
       </button>
-      <button class="btn-large green darken-2 waves-effect">
+      <button (click)="signIn()" class="btn-large green darken-2 waves-effect">
         Submit
       </button>
     </div>

@@ -15,7 +15,9 @@ import { OrdersComponent } from './orders/orders.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { TripDetailsComponent } from './trips/trip-details/trip-details.component';
+
 import { SearchPipe } from './pipes/search.pipe';
+import { AuthService } from './services/auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,11 @@ import { SearchPipe } from './pipes/search.pipe';
     ]),
     Ng2PaginationModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    AuthService
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

@@ -6,7 +6,7 @@ export class Order {
     public id: number=0,
     public trip: Trip=new Trip(),
     public payDate: Date=new Date(),
-    public endDate: Date=new Date()
+    public paymentSystem: string=""
   ) {}
 
 }

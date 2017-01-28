@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { TripsService } from '../../services/trips.service';
+import { TripsService } from '../../services/trips/trips.service';
 import { Trip } from '../../models/trip.model';
 
 declare let $: any;

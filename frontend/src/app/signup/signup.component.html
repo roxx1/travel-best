@@ -9,6 +9,7 @@
     <div class="input-field">
       <i class="material-icons prefix">mail</i>
       <input
+        [(ngModel)]="user.email"
         class="input-data"
         type="email"
         name="email"
@@ -17,8 +18,9 @@
     </div>
     
     <div class="input-field">
-      <i class="material-icons prefix">account_box</i>
+      <i class="material-icons prefix">person_outline</i>
       <input
+        [(ngModel)]="user.name"
         class="input-data"
         type="text"
         name="username"
@@ -29,6 +31,7 @@
     <div class="input-field">
       <i class="material-icons prefix">vpn_key</i>
       <input
+        [(ngModel)]="password"
         class="input-data"
         type="password"
         name="password"
@@ -37,10 +40,10 @@
     </div>
     
     <div class="btn-box">
-      <button class="btn-large green darken-2 waves-effect">
+      <button (click)="reset()" class="btn-large green darken-2 waves-effect">
         Reset
       </button>
-      <button class="btn-large green darken-2 waves-effect">
+      <button (click)="signup()" class="btn-large green darken-2 waves-effect">
         Submit
       </button>
     </div>

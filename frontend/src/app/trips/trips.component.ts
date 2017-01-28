@@ -11,7 +11,7 @@ import {
   PaginationService
 } from 'ng2-pagination';
 
-import { TripsService } from '../services/trips.service';
+import { TripsService } from '../services/trips/trips.service';
 import { TripDetailsComponent } from './trip-details/trip-details.component';
 import { Trip } from '../models/trip.model';
 
