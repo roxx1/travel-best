@@ -10,9 +10,9 @@ import static org.junit.Assert.assertTrue;
 @WebAppConfiguration
 public class TravelApplicationTests {
 
-	@Test
-	public void contextLoads() {
+    @Test
+    public void contextLoads() {
         assertTrue("Context Loads", true);
-	}
+    }
 
 }

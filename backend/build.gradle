@@ -24,20 +24,20 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 repositories {
-    jcenter()
+  jcenter()
   mavenCentral()
 }
 
 dependencies {
   compile('org.springframework.boot:spring-boot-starter-data-jpa')
   compile('org.springframework.boot:spring-boot-starter-web')
-    compile('org.springframework.boot:spring-boot-starter-security')
-    compile("org.springframework.data:spring-data-rest-webmvc:2.5.6.RELEASE")
-    compile('org.springframework.boot:spring-boot-devtools:1.4.1.RELEASE')
-    compile('org.projectlombok:lombok:1.16.10')
-    compile('io.jsonwebtoken:jjwt:0.7.0')
+  compile('org.springframework.boot:spring-boot-starter-security')
+  compile("org.springframework.data:spring-data-rest-webmvc:2.5.6.RELEASE")
+  compile('org.springframework.boot:spring-boot-devtools:1.4.1.RELEASE')
+  compile('org.projectlombok:lombok:1.16.10')
+  compile('io.jsonwebtoken:jjwt:0.7.0')
 
-    runtime('org.postgresql:postgresql')
+  runtime('org.postgresql:postgresql')
   
   testCompile('org.springframework.boot:spring-boot-starter-test')
   testCompile("junit:junit")
