@@ -23,10 +23,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.NoResultException;
 import javax.servlet.http.HttpServletRequest;
@@ -36,6 +33,10 @@ public class AuthController extends BaseController {
 
     @Value("${auth.header}")
     private String tokenHeader;
+
+    private static final String SIGN_IN_URL = "api/auth/signin";
+    private static final String SIGN_UP_URL = "api/auth/signup";
+    private static final String REFRESH_TOKEN_URL = "api/auth/token/refresh";
 
     private AuthenticationManager authenticationManager;
     private JwtTokenUtil jwtTokenUtil;
@@ -67,10 +68,7 @@ public class AuthController extends BaseController {
         return new BCryptPasswordEncoder();
     }
 
-    @RequestMapping(
-        value = "api/auth/signup",
-        method = RequestMethod.POST
-    )
+    @PostMapping(AuthController.SIGN_UP_URL)
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtAuthenticationRequest authenticationRequest)
             throws AuthenticationException {
 
@@ -100,10 +98,7 @@ public class AuthController extends BaseController {
         return ResponseEntity.ok(new JwtAuthenticationResponse(token));
     }
 
-    @RequestMapping(
-        value = "api/auth/signin",
-        method = RequestMethod.POST
-    )
+    @PostMapping(AuthController.SIGN_IN_URL)
     public ResponseEntity<?> getAuthenticationToken(@RequestBody JwtAuthenticationRequest authenticationRequest)
             throws AuthenticationException {
 
@@ -131,10 +126,7 @@ public class AuthController extends BaseController {
         return ResponseEntity.ok(new JwtAuthenticationResponse(token));
     }
 
-    @RequestMapping(
-        value = "api/auth/token/refresh",
-        method = RequestMethod.POST
-    )
+    @PostMapping(AuthController.REFRESH_TOKEN_URL)
     public ResponseEntity<?> refreshAuthenticationToken(HttpServletRequest request) {
         String token = request.getHeader(tokenHeader);
         LOG.info("[POST] REFRESH TOKEN FOR User " + token);

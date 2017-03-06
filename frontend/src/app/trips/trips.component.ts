@@ -25,9 +25,7 @@ declare let $: any;
 })
 export class TripsComponent implements OnInit {
   @ViewChild('details') private details: TripDetailsComponent;
-
   private trips: Array<Trip>;
-
   private term: string;
 
   constructor(
@@ -40,7 +38,12 @@ export class TripsComponent implements OnInit {
 
     this.term = "";
 
-    this.trips = this.tripsService.getTrips();
+    this.tripsService.getTrips()
+      .subscribe(trips => {
+        this.trips = trips;
+      }, error => {
+        console.error(error);
+      });
   }
 
   buyNow(trip: Trip) {
@@ -48,7 +51,6 @@ export class TripsComponent implements OnInit {
   }
 
   addToShoppingCart(trip: Trip) {
-
   }
 
 }

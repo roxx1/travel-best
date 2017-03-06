@@ -17,7 +17,7 @@ public class Trip {
     @GeneratedValue
     private Long id;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "route_id")
     private Route route;
 
@@ -46,10 +46,10 @@ public class Trip {
     private Integer minAmountOfTourists;
 
     @Column(name = "max_amount_of_tourists")
-    private Integer maxAmountOfTourits;
+    private Integer maxAmountOfTourists;
 
-    @Column(name = "inssurance_sum")
-    private Double inssuranceSum;
+    @Column(name = "insurance_sum")
+    private Double insuranceSum;
 
     public Trip(Route route, Double price) {
         this.setPrice(price);

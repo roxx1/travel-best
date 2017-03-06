@@ -43,7 +43,7 @@
   margin-left: 5%;
 }
 
-.buy-now form {
+.buy-now .payment {
   margin: 24px 0;
   padding: 8px;
   display: flex;

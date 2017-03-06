@@ -18,9 +18,9 @@ export class AuthService extends ReplaySubject<string> {
   private username: string;
   private userId: number;
   
-  private static SIGNUP_URL = "/api/auth/signup";
-  private static SIGNIN_URL = "/api/auth/signin";
-  private static REFRESH_TOKEN_URL = "/api/auth/token/refresh";
+  private static SIGNUP_URL = "http://localhost:8080/api/auth/signup";
+  private static SIGNIN_URL = "http://localhost:8080/api/auth/signin";
+  private static REFRESH_TOKEN_URL = "http://localhost:8080/api/auth/token/refresh";
   
   constructor(private http: Http) {
     super();

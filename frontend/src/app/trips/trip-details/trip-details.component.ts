@@ -30,8 +30,8 @@ export class TripDetailsComponent implements OnInit {
     this.currentTrip = this.tripsService.getTripById(1);
   }
 
-  buy() {
-    this.router.navigate(['orders']);
+  onBuy() {
+    this.router.navigate(['/orders/']);
   }
 
 }
