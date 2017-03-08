@@ -5,6 +5,10 @@ table {
   overflow: auto;
 }
 
+table .image-field {
+  cursor: pointer;
+}
+
 p {
   font-size: 1.5rem;
   font-weight: bold;
@@ -13,4 +17,10 @@ p {
   margin-bottom: 0;
   text-align: center;
   border-radius: 3px;
+}
+
+.empty-shopping-cart {
+  font-size: 1.3rem;
+  padding: 24px;
+  text-align: center;
 }

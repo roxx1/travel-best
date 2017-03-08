@@ -48,16 +48,45 @@ export class OrdersService {
   }
 
   getAll(): Observable<Array<Order>> {
-    // TODO
-    return null;
+    let userId = this.authService.getUserId();
+    if(userId) {
+      return this.http.get("http://localhost:8080/api/orders?userId=" + userId)
+        .map((res: Response) => {
+          return res.json()._embedded.orders;
+        }).catch(error => {
+          throw Error(error.json() && error.json().message);
+        });
+    } else {
+      return new Observable();
+    }
   }
 
   approve(order: Order) {
-    // TODO
+    let userId = this.authService.getUserId();
+    if(userId) {
+      return this.http.post("http://localhost:8080/api/orders?userId=" + userId, order)
+        .map((res: Response) => {
+          return this.deleteFromShoppingCart(order);
+        }).catch(error => {
+          throw Error(error.json() && error.json().message);
+        });
+    } else {
+      return new Observable();
+    }
   }
 
   reject(order: Order) {
-    // TODO
+    let userId = this.authService.getUserId();
+    if(userId) {
+      return this.http.patch("http://localhost:8080/api/orders/${order.id}/reject", order)
+        .map((res: Response) => {
+          return res.json();
+        }).catch(error => {
+          throw Error(error.json() && error.json().message);
+        });
+    } else {
+      return new Observable();
+    }
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Order } from '../models/order.model';
 import { OrdersService } from '../services/orders/orders.service';
@@ -15,12 +16,30 @@ export class OrdersComponent implements OnInit {
   private orders: Array<Order>;
   private paidOrders: Array<Order>;
 
-  constructor(private ordersService: OrdersService) { }
+  constructor(
+    private ordersService: OrdersService,
+    private router: Router
+  ) {
+    this.orders = [];
+    this.paidOrders = [];
+  }
 
   ngOnInit() {
     $('html, body').animate({scrollTop: $('.orders').offset().top - 100 + 'px'}, 'fast');
     this.orders = this.ordersService.getAllFromShoppingCart();
   } 
+
+  jumpToTrip(order: Order) {
+    this.router.navigate(['/trips/', order.trip.id]);
+  }
+
+  hasAnyOrders() {
+    return this.orders.length > 0;
+  }
+
+  hasAnyPaidOrders() {
+    return this.paidOrders.length > 0;
+  }
 
   onDiscard(order: Order) {
     this.orders = this.ordersService.deleteFromShoppingCart(order);

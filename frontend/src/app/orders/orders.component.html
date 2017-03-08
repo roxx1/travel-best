@@ -1,7 +1,15 @@
 <div class="orders">
   
-  <p class="hoverable">In Shopping card</p>
-  <table class="responsive-table centered highlight hoverable white darken-1">
+  <div *ngIf="!hasAnyOrders() && !hasAnyPaidOrders()"
+    class="empty-shopping-cart card white hoverable">
+    Shopping card is empty.
+    <a [routerLink]="['/trips']">Add something</a>
+  </div>
+  
+  <p *ngIf="hasAnyOrders()" class="hoverable">In Shopping cart</p>
+  <table
+    *ngIf="hasAnyOrders()"
+    class="responsive-table centered highlight hoverable white darken-1">
     <thead>
       <tr>
         <th data-field="trip">Trip</th>
@@ -16,7 +24,7 @@
     <tbody>
       <tr *ngFor="let order of orders">
 
-        <td>
+        <td (click)="jumpToTrip(order)" class="image-field">
           <div class="chip">
             <img src="{{order.trip.route.image}}" alt="No image" />
             {{order.trip.route.title}}
@@ -56,8 +64,10 @@
     </tbody>
   </table>
 
-  <p class="hoverable">Paid Trips</p>
-  <table class="responsive-table centered highlight hoverable white darken-1">
+  <p *ngIf="hasAnyPaidOrders()" class="hoverable">Paid Trips</p>
+  <table
+    *ngIf="hasAnyPaidOrders()"
+    class="responsive-table centered highlight hoverable white darken-1">
     <thead>
       <tr>
         <th data-field="trip">Trip</th>
@@ -71,7 +81,7 @@
 
     <tbody>
       <tr *ngFor="let order of paidOrders">
-        <td>
+        <td (click)="jumpToTrip(order)" class="image-field">
           <div class="chip">
             <img src="{{order.trip.route.image}}" alt="No image" />
             {{order.trip.route.title}}
