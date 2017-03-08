@@ -21,13 +21,23 @@ export class TripDetailsComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private tripsService: TripsService
-  ) {}
+  ) {
+    this.currentTrip = new Trip();
+  }
 
   ngOnInit() {
     $('html, body').animate({scrollTop: $('.buy-now').offset().top - 100 + 'px'}, 'fast');
     $('select').material_select();
     $('.collapsible').collapsible();
-    this.currentTrip = this.tripsService.getTripById(1);
+    
+    let id = +this.route.snapshot.params['id'];
+
+    this.tripsService.getTripById(id)
+      .subscribe(trip => {
+        this.currentTrip = trip;
+      }, error => {
+        console.error(error);
+      });
   }
 
   onBuy() {

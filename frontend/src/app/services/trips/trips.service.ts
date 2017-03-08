@@ -7,8 +7,7 @@ import {
   Response
 } from '@angular/http';
 
-import { Observable } from 'rxjs';
-import { ReplaySubject } from 'rxjs/Rx';
+import { Observable, ReplaySubject } from 'rxjs/Rx';
 import 'rxjs/add/operator/map'
 
 import { Trip } from '../../models/trip.model';
@@ -29,7 +28,7 @@ export class TripsService {
   }
 
   getTripById(id: number): Observable<Trip> {
-    return this.http.get("http://localhost:8080/api/trips/" + id)
+    return this.http.get(`http://localhost:8080/api/trips/${id}?projection=route`)
       .map((res: Response) => {
         return res.json();
       }).catch(error => {
