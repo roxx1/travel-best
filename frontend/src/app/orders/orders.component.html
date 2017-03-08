@@ -37,7 +37,7 @@
 
         <td>
           <button
-            (click)="pay(order)"
+            (click)="onPay(order)"
             class="btn green darken-2 hoverable waves-effect">
             <i class="material-icons">shop</i>
           </button>
@@ -45,7 +45,7 @@
 
         <td>
           <button
-            (click)="delete(order)"
+            (click)="onDiscard(order)"
             class="btn green darken-2 hoverable waves-effect">
               <i class="material-icons">delete</i>
           </button>
@@ -95,7 +95,7 @@
 
         <td>
           <button
-            (click)="reject(order)"
+            (click)="onReject(order)"
             class="btn green darken-2 hoverable waves-effect">
             <i class="material-icons">delete</i>
           </button>

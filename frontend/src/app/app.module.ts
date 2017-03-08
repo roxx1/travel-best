@@ -18,6 +18,7 @@ import { TripDetailsComponent } from './trips/trip-details/trip-details.componen
 
 import { SearchPipe } from './pipes/search.pipe';
 import { AuthService } from './services/auth/auth.service';
+import { OrdersService } from './services/orders/orders.service';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,7 @@ import { AuthService } from './services/auth/auth.service';
     Ng2PaginationModule
   ],
   providers: [
-    AuthService
+    AuthService, OrdersService
   ],
   bootstrap: [
     AppComponent

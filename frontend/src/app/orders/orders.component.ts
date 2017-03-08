@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Order } from '../models/order.model';
+import { OrdersService } from '../services/orders/orders.service';
 
 declare let $: any;
 
@@ -14,33 +15,21 @@ export class OrdersComponent implements OnInit {
   private orders: Array<Order>;
   private paidOrders: Array<Order>;
 
-  constructor() { }
+  constructor(private ordersService: OrdersService) { }
 
   ngOnInit() {
     $('html, body').animate({scrollTop: $('.orders').offset().top - 100 + 'px'}, 'fast');
-    this.orders = [
-      new Order(),
-      new Order(),
-      new Order()
-    ];
+    this.orders = this.ordersService.getAllFromShoppingCart();
+  } 
 
-    this.paidOrders = [
-      new Order(),
-      new Order(),
-      new Order()
-    ]
+  onDiscard(order: Order) {
+    this.orders = this.ordersService.deleteFromShoppingCart(order);
   }
 
-  delete(order: Order) {
-    this.orders = this.orders.filter(o => o !== order);
+  onPay(order: Order) {
   }
 
-  pay(order: Order) {
-
-  }
-
-  reject(order: Order) {
-    this.paidOrders = this.paidOrders.filter(o => o !== order);
+  onReject(order: Order) {
   }
 
 }

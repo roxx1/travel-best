@@ -3,7 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { TripsService } from '../../services/trips/trips.service';
+import { OrdersService } from '../../services/orders/orders.service';
+import { AuthService } from '../../services/auth/auth.service';
 import { Trip } from '../../models/trip.model';
+import { User } from '../../models/user.model';
+import { Order} from '../../models/order.model';
 
 declare let $: any;
 
@@ -20,7 +24,9 @@ export class TripDetailsComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private tripsService: TripsService
+    private tripsService: TripsService,
+    private ordersService: OrdersService,
+    private authService: AuthService
   ) {
     this.currentTrip = new Trip();
   }
@@ -41,6 +47,19 @@ export class TripDetailsComponent implements OnInit {
   }
 
   onBuy() {
+    let order = new Order();
+    let userId = this.authService.getUserId();
+
+    if(userId) {
+     order.user = new User(this.authService.getUserId());
+    } else {
+      order.user = new User();
+    }
+
+    order.trip = this.currentTrip;
+    order.payDate = new Date();
+
+    this.ordersService.addToShoppingCart(order);
     this.router.navigate(['/orders/']);
   }
 
