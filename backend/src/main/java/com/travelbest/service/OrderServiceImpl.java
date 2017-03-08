@@ -24,13 +24,27 @@ public class OrderServiceImpl implements OrderService {
   }
 
   @Override
-  public Order findById(Long id) {
-    return orderRepository.findOne(id);
+  public Order findOne(Long id) {
+      return orderRepository.findOne(id);
   }
 
   @Override
   public List<Order> findAll() {
     return orderRepository.findAll();
+  }
+
+  public Order findOneByUserId(Long userId) {
+      return orderRepository.findOneByUserId(userId);
+  }
+
+  @Override
+  public List<Order> findAllByUserId(Long userId) {
+      return orderRepository.findAllByUserId(userId);
+  }
+
+  @Override
+  public void rejectOrder(Long orderId) {
+      orderRepository.rejectOrder(orderId);
   }
 
 }

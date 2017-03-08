@@ -34,9 +34,9 @@ public class AuthController extends BaseController {
     @Value("${auth.header}")
     private String tokenHeader;
 
-    private static final String SIGN_IN_URL = "api/auth/signin";
-    private static final String SIGN_UP_URL = "api/auth/signup";
-    private static final String REFRESH_TOKEN_URL = "api/auth/token/refresh";
+    public static final String SIGN_IN_URL = "api/auth/signin";
+    public static final String SIGN_UP_URL = "api/auth/signup";
+    public static final String REFRESH_TOKEN_URL = "api/auth/token/refresh";
 
     private AuthenticationManager authenticationManager;
     private JwtTokenUtil jwtTokenUtil;

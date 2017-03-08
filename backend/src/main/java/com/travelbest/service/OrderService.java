@@ -9,6 +9,9 @@ import java.util.List;
 public interface OrderService {
   void save(Order order);
   void delete(Long id);
-  Order findById(Long id);
+  Order findOne(Long id);
   List<Order> findAll();
+  Order findOneByUserId(Long userId);
+  List<Order> findAllByUserId(Long userId);
+  void rejectOrder(Long orderId);
 }
