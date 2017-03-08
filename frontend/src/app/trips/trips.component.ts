@@ -24,6 +24,7 @@ declare let $: any;
   providers: [TripsService]
 })
 export class TripsComponent implements OnInit {
+
   @ViewChild('details') private details: TripDetailsComponent;
   private trips: Array<Trip>;
   private term: string;
@@ -46,11 +47,11 @@ export class TripsComponent implements OnInit {
       });
   }
 
-  buyNow(trip: Trip) {
+  onBuyNow(trip: Trip) {
     this.router.navigate(['/trips/', trip.id]);
   }
 
-  addToShoppingCart(trip: Trip) {
+  OnAddToShoppingCart(trip: Trip) {
   }
 
 }

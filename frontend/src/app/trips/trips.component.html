@@ -15,7 +15,7 @@
       
       <div class="card hoverable">
         
-        <div class="card-image">
+        <div (click)="onBuyNow(trip)" class="card-image">
           <img src="{{trip.route.image}}" />
           <span class="card-title">
             {{trip.route.title}}
@@ -31,13 +31,13 @@
         
         <div class="card-action">
           <button
-            (click)="buyNow(trip)"
+            (click)="onBuyNow(trip)"
             class="btn green darken-2 waves-effect">
               <span class="material-icons">shopping_basket</span>
           </button>
             
           <button
-            (click)="addToShoppingCart(trip)"
+            (click)="OnAddToShoppingCart(trip)"
             class="btn tooltipped green darken-2 waves-effect"
             data-position="top"
             data-delay="50"

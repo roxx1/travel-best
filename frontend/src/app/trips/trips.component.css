@@ -37,6 +37,10 @@
   height: 250px;
 }
 
+.card-image:hover {
+  cursor: pointer;
+}
+
 .card-image img {
   height: 250px;
 }
