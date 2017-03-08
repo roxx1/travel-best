@@ -12,6 +12,7 @@
       <a routerLink="orders" [routerLinkActive]="['is-active']">
         <span class="material-icons">shopping_cart</span>
         <span class="hide-on-small-only">Orders</span>
+        <span *ngIf="hasAnyOrders()" class="new badge">{{getNumberOfOrders()}}</span>
       </a>
     </li>
 
