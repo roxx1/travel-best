@@ -11,6 +11,8 @@ import { Observable } from 'rxjs';
 import { ReplaySubject } from 'rxjs/Rx';
 import 'rxjs/add/operator/map'
 
+import { environment } from '../../../environments/environment';
+
 @Injectable()
 export class AuthService extends ReplaySubject<string> {
 
@@ -18,9 +20,9 @@ export class AuthService extends ReplaySubject<string> {
   private username: string;
   private userId: number;
   
-  private static SIGNUP_URL = "http://localhost:8080/api/auth/signup";
-  private static SIGNIN_URL = "http://localhost:8080/api/auth/signin";
-  private static REFRESH_TOKEN_URL = "http://localhost:8080/api/auth/token/refresh";
+  private static SIGNUP_URL = environment.host + "api/auth/signup";
+  private static SIGNIN_URL = environment.host + "api/auth/signin";
+  private static REFRESH_TOKEN_URL = environment.host + "api/auth/token/refresh";
   
   constructor(private http: Http) {
     super();

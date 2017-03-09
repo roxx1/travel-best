@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { TripsService } from '../../services/trips/trips.service';
 import { OrdersService } from '../../services/orders/orders.service';
+import { UsersService } from '../../services/users/users.service';
 import { AuthService } from '../../services/auth/auth.service';
 import { Trip } from '../../models/trip.model';
 import { User } from '../../models/user.model';
@@ -15,20 +16,23 @@ declare let $: any;
   selector: 'app-trip-details',
   templateUrl: './trip-details.component.html',
   styleUrls: ['./trip-details.component.css'],
-  providers: [TripsService]
+  providers: [TripsService, UsersService]
 })
 export class TripDetailsComponent implements OnInit {
 
   private currentTrip: Trip;
+  private currentUser: User;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private tripsService: TripsService,
     private ordersService: OrdersService,
-    private authService: AuthService
+    private authService: AuthService,
+    private usersService: UsersService
   ) {
     this.currentTrip = new Trip();
+    this.currentUser = new User();
   }
 
   ngOnInit() {
@@ -36,14 +40,25 @@ export class TripDetailsComponent implements OnInit {
     $('select').material_select();
     $('.collapsible').collapsible();
     
-    let id = +this.route.snapshot.params['id'];
+    let tripId = +this.route.snapshot.params['id'];
+    let userId = this.authService.getUserId();
 
-    this.tripsService.getTripById(id)
+    this.tripsService.getTripById(tripId)
       .subscribe(trip => {
         this.currentTrip = trip;
       }, error => {
         console.error(error);
       });
+
+    if(userId) {
+      this.usersService.getById(userId)
+        .subscribe(user => {
+          this.currentUser = user;
+        }, error => {
+          console.error(error);
+        });
+    }
+
   }
 
   onBuy() {
@@ -51,9 +66,9 @@ export class TripDetailsComponent implements OnInit {
     let userId = this.authService.getUserId();
 
     if(userId) {
-     order.user = new User(this.authService.getUserId());
+      order.user = new User(this.authService.getUserId());
     } else {
-      order.user = new User();
+      order.user = this.currentUser;
     }
 
     order.trip = this.currentTrip;

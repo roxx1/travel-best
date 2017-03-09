@@ -13,13 +13,15 @@ import 'rxjs/add/operator/map'
 import { Trip } from '../../models/trip.model';
 import { Route } from '../../models/route.model';
 
+import { environment } from '../../../environments/environment';
+
 @Injectable()
 export class TripsService {
 
   constructor(private http: Http) {}
 
   getTrips(): Observable<Array<Trip>> {
-    return this.http.get("http://localhost:8080/api/trips")
+    return this.http.get(environment.host + "api/trips")
         .map((res: Response) => {
           return res.json()._embedded.trips;
         }).catch(error => {
@@ -28,7 +30,7 @@ export class TripsService {
   }
 
   getTripById(id: number): Observable<Trip> {
-    return this.http.get(`http://localhost:8080/api/trips/${id}?projection=route`)
+    return this.http.get(`${environment.host}api/trips/${id}?projection=inline-route`)
       .map((res: Response) => {
         return res.json();
       }).catch(error => {

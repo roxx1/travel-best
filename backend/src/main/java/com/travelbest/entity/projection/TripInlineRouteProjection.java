@@ -6,7 +6,7 @@ import org.springframework.data.rest.core.config.Projection;
 
 import java.util.Date;
 
-@Projection(name="route", types = {Trip.class})
+@Projection(name="inline-route", types = {Trip.class})
 public interface TripInlineRouteProjection {
     Long getId();
     Double getPrice();

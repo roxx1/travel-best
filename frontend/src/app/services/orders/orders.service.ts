@@ -14,6 +14,8 @@ import { AuthService } from "../auth/auth.service";
 import { Order } from "../../models/order.model";
 import { User } from "../../models/user.model";
 
+import { environment } from '../../../environments/environment';
+
 @Injectable()
 export class OrdersService {
 
@@ -48,45 +50,48 @@ export class OrdersService {
   }
 
   getAll(): Observable<Array<Order>> {
-    let userId = this.authService.getUserId();
-    if(userId) {
-      return this.http.get("http://localhost:8080/api/orders?userId=" + userId)
-        .map((res: Response) => {
-          return res.json()._embedded.orders;
-        }).catch(error => {
-          throw Error(error.json() && error.json().message);
-        });
-    } else {
-      return new Observable();
-    }
+    let userId = this.authService.getUserId() || 0;
+    return this.http.get(`${environment.host}api/orders?userId=${userId}`)
+      .map((res: Response) => {
+        return res.json()._embedded.orders || [];
+      }).catch(error => {
+        throw Error(error.json() && error.json().message);
+      });
   }
 
   approve(order: Order) {
-    let userId = this.authService.getUserId();
-    if(userId) {
-      return this.http.post("http://localhost:8080/api/orders?userId=" + userId, order)
-        .map((res: Response) => {
-          return this.deleteFromShoppingCart(order);
-        }).catch(error => {
-          throw Error(error.json() && error.json().message);
-        });
-    } else {
-      return new Observable();
-    }
+    console.log(order);
+    return this.http.post(
+      `${environment.host}api/orders/`,
+      this.generateOptions(),
+      order
+    ).map((res: Response) => {
+      return this.deleteFromShoppingCart(order);
+    }).catch(error => {
+      throw Error(error.json() && error.json().message);
+    });
   }
 
   reject(order: Order) {
-    let userId = this.authService.getUserId();
-    if(userId) {
-      return this.http.patch("http://localhost:8080/api/orders/${order.id}/reject", order)
-        .map((res: Response) => {
-          return res.json();
-        }).catch(error => {
-          throw Error(error.json() && error.json().message);
-        });
-    } else {
-      return new Observable();
-    }
+    return this.http.patch(
+      `${environment.host}api/orders/${order.id}/reject`,
+      this.generateOptions(),
+      order
+    ).map((res: Response) => {
+      return res.json();
+    }).catch(error => {
+      throw Error(error.json() && error.json().message);
+    });
+  }
+
+  private generateOptions(): RequestOptions {
+    let headers = new Headers({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Credentials': true,
+      'Authorization': this.authService.getToken()
+    });
+    return new RequestOptions({ headers: headers });
   }
 
 }
