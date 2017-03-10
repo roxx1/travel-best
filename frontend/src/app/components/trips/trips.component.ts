@@ -11,15 +11,15 @@ import {
   PaginationService
 } from 'ng2-pagination';
 
-import { TripsService } from '../services/trips/trips.service';
-import { OrdersService } from '../services/orders/orders.service';
-import { AuthService } from '../services/auth/auth.service';
+import { TripsService } from '../../services/trips/trips.service';
+import { OrdersService } from '../../services/orders/orders.service';
+import { AuthService } from '../../services/auth/auth.service';
 
 import { TripDetailsComponent } from './trip-details/trip-details.component';
 
-import { Trip } from '../models/trip.model';
-import { Order } from '../models/order.model';
-import { User } from '../models/user.model';
+import { Trip } from '../../models/trip.model';
+import { Order } from '../../models/order.model';
+import { User } from '../../models/user.model';
 
 declare let $: any;
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AuthService } from '../services/auth/auth.service';
-import { OrdersService } from '../services/orders/orders.service';
+import { AuthService } from '../../services/auth/auth.service';
+import { OrdersService } from '../../services/orders/orders.service';
 
 @Component({
   selector: 'app-nav',

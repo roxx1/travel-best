@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { TripsService } from '../../services/trips/trips.service';
-import { OrdersService } from '../../services/orders/orders.service';
-import { UsersService } from '../../services/users/users.service';
-import { AuthService } from '../../services/auth/auth.service';
-import { Trip } from '../../models/trip.model';
-import { User } from '../../models/user.model';
-import { Order} from '../../models/order.model';
+import { TripsService } from '../../../services/trips/trips.service';
+import { OrdersService } from '../../../services/orders/orders.service';
+import { UsersService } from '../../../services/users/users.service';
+import { AuthService } from '../../../services/auth/auth.service';
+import { Trip } from '../../../models/trip.model';
+import { User } from '../../../models/user.model';
+import { Order} from '../../../models/order.model';
 
 declare let $: any;
 

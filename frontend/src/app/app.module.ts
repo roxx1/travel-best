@@ -6,15 +6,15 @@ import { RouterModule } from '@angular/router';
 
 import { Ng2PaginationModule } from 'ng2-pagination';
 
-import { AppComponent } from './app.component';
-import { TripsComponent } from './trips/trips.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { NavComponent } from './nav/nav.component';
-import { OrdersComponent } from './orders/orders.component';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
-import { TripDetailsComponent } from './trips/trip-details/trip-details.component';
+import { AppComponent } from './components/app.component';
+import { TripsComponent } from './components/trips/trips.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { NavComponent } from './components/nav/nav.component';
+import { OrdersComponent } from './components/orders/orders.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { TripDetailsComponent } from './components/trips/trip-details/trip-details.component';
 
 import { SearchPipe } from './pipes/search.pipe';
 import { AuthService } from './services/auth/auth.service';

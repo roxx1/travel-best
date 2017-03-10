@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Order } from '../models/order.model';
-import { OrdersService } from '../services/orders/orders.service';
+import { Order } from '../../models/order.model';
+import { OrdersService } from '../../services/orders/orders.service';
 
 declare let $: any;
 

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AuthService } from '../services/auth/auth.service';
-import { User } from '../models/user.model';
+import { AuthService } from '../../services/auth/auth.service';
+import { User } from '../../models/user.model';
 
 declare let $: any;
 
@@ -31,9 +31,8 @@ export class SignupComponent implements OnInit {
   }
 
   signup() {
-    this.authService.signUp(this.user.name, this.user.email, this.password)
+    this.authService.signUp(this.user.username, this.user.email, this.password)
       .subscribe(res => {
-        console.log(res);
         this.router.navigate(['/trips']);
       }, error => {
         console.error(error);
