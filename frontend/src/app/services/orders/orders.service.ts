@@ -59,17 +59,12 @@ export class OrdersService {
       });
   }
 
-  approve(order: Order) {
-    console.log(order);
+  approve(order: Order): any {
     return this.http.post(
       `${environment.host}api/orders/`,
       this.generateOptions(),
       order
-    ).map((res: Response) => {
-      return this.deleteFromShoppingCart(order);
-    }).catch(error => {
-      throw Error(error.json() && error.json().message);
-    });
+    );
   }
 
   reject(order: Order) {
@@ -77,18 +72,12 @@ export class OrdersService {
       `${environment.host}api/orders/${order.id}/reject`,
       this.generateOptions(),
       order
-    ).map((res: Response) => {
-      return res.json();
-    }).catch(error => {
-      throw Error(error.json() && error.json().message);
-    });
+    );
   }
 
   private generateOptions(): RequestOptions {
-    let headers = new Headers({
+    const headers = new Headers({
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Credentials': true,
       'Authorization': this.authService.getToken()
     });
     return new RequestOptions({ headers: headers });

@@ -47,12 +47,8 @@ export class OrdersComponent implements OnInit {
 
   onPay(order: Order) {
     this.ordersService.approve(order)
-      .subscribe(order => {
-        console.log("SUCCESS: " + order);
-        this.ordersService.getAll().subscribe(
-          orders => this.paidOrders = orders,
-          error => console.error(error)
-        );
+      .subscribe(_ => {
+        console.log("APPROVED");
       }, error => {
         console.error(error);
       });
@@ -61,7 +57,6 @@ export class OrdersComponent implements OnInit {
   onReject(order: Order) {
     this.ordersService.reject(order)
       .subscribe(order => {
-        console.log("REJECTED: " + order);
         this.ordersService.getAll().subscribe(
           orders => this.paidOrders = orders,
           error => console.error(error)
