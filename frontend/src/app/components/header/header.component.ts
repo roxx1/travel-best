@@ -9,12 +9,15 @@ declare let $: any;
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  private slides: Array<any>
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
-  scrollToContent() {
+  onScrollToContent() {
     $(window).scrollTop($(window).height() - $(window).height()/10);
   }
 
