@@ -1,7 +1,7 @@
 .search {
   padding: 8px;
   background-color: #fafafa;
-  background-image: url("assets/imgs/crossword.png");
+  background-image: url("/assets/imgs/crossword.png");
   border-radius: 3px;
   margin-bottom: 16px;
 }

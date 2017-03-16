@@ -2,7 +2,7 @@
   max-width: 860px;
   width: 90%;
   bottom: 10%;
-  background-image: url("assets/imgs/crossword.png");
+  background-image: url("/assets/imgs/crossword.png");
   border-radius: 3px;
   margin: 24px auto;
 }
