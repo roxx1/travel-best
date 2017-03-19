@@ -1,8 +1,4 @@
 #!/bin/bash
 
-cd frontend
-
-npm i
-ng build --prod --aot
-
+npm install --prefix frontend && npm run build --prefix frontend
 
